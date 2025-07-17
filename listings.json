@@ -1,7 +1,12 @@
 [
   {
+    "listing": "/slides.html",
+    "items": []
+  },
+  {
     "listing": "/notebooks.html",
     "items": [
+      "/advanced/notebooks/tensor-factorisation.html",
       "/notebooks/Gradient Descent-2d.html",
       "/notebooks/Gradient Descent.html",
       "/notebooks/Linear Regression Notebook.html",
@@ -74,9 +79,5 @@
       "/notebooks/cnn.html",
       "/notebooks/cnn-edge.html"
     ]
-  },
-  {
-    "listing": "/slides.html",
-    "items": []
   }
 ]
