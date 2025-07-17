@@ -318,12 +318,13 @@ ul.task-list li input[type="checkbox"] {
 │       ├── diagrams/
 │       ├── figures/
 │       └── notes/
-├── notebooks/
+├── notebooks/               # Empty - notebooks are in main /notebooks/
 └── slides/
     ├── topic-slide.tex
     ├── topic-slide.pdf
     ├── topic-slide.key        # Keynote presentations
     └── topic-slide.pptx       # PowerPoint presentations</code></pre>
+<p><strong>Note</strong>: All notebooks are stored flat in the main <code>/notebooks/</code> directory, not organized by category.</p>
 </section>
 <section id="key-points" class="level2">
 <h2 class="anchored" data-anchor-id="key-points">Key Points</h2>
@@ -332,7 +333,7 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Presentation files (.key, .pptx)</strong> go directly in <code>category/slides/</code></li>
 <li><strong>Assets (figures, diagrams)</strong> go in <code>category/assets/topic-name/</code></li>
 <li><strong>Handwritten notes/PDFs</strong> go in <code>category/assets/topic-name/notes/</code></li>
-<li><strong>Notebooks</strong> go in <code>category/notebooks/</code></li>
+<li><strong>Notebooks</strong> go in main <code>/notebooks/</code> directory (flat structure, not by category)</li>
 <li><strong>PDFs</strong> are generated from .tex files and kept with slides</li>
 </ol>
 </section>
@@ -345,11 +346,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li><code>maths/assets/optimization/gradient-descent/</code> - Gradient descent assets</li>
 <li><code>maths/assets/optimization/gradient-descent/notes/</code> - Handwritten gradient descent notes</li>
+<li><code>notebooks/tensor-factorisation.ipynb</code> - Matrix factorization notebook (flat structure)</li>
 </ul>
 </section>
 <section id="migration-rules" class="level2">
 <h2 class="anchored" data-anchor-id="migration-rules">Migration Rules</h2>
-<p>When moving content: 1. Move .tex files to appropriate <code>category/slides/</code> 2. Move supporting assets to <code>category/assets/topic-name/</code> 3. Move handwritten notes/PDFs to <code>category/assets/topic-name/notes/</code> 4. Keep related content together by topic 5. Follow the existing naming conventions</p>
+<p>When moving content: 1. Move .tex files to appropriate <code>category/slides/</code> 2. Move supporting assets to <code>category/assets/topic-name/</code> 3. Move handwritten notes/PDFs to <code>category/assets/topic-name/notes/</code> 4. Move notebooks to main <code>/notebooks/</code> directory (flat structure) 5. Keep related content together by topic 6. Follow the existing naming conventions</p>
 
 
 </section>

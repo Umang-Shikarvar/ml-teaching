@@ -1,9 +1,5 @@
 [
   {
-    "listing": "/slides.html",
-    "items": []
-  },
-  {
     "listing": "/notebooks.html",
     "items": [
       "/advanced/notebooks/tensor-factorisation.html",
@@ -20,6 +16,7 @@
       "/notebooks/mnist-digits.html",
       "/notebooks/nn_vectorization_with_vmap_jaxtyping_and_beartype_zeel.html",
       "/notebooks/pr-curve.html",
+      "/notebooks/tensor-factorisation.html",
       "/notebooks/tips.html",
       "/notebooks/meshgrid.html",
       "/notebooks/svm-cvxopt.html",
@@ -79,5 +76,9 @@
       "/notebooks/cnn.html",
       "/notebooks/cnn-edge.html"
     ]
+  },
+  {
+    "listing": "/slides.html",
+    "items": []
   }
 ]
