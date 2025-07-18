@@ -41,9 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-c3c2c9e745155556954bc4da23476b10.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-53f3c6554c55bf1052785c9e9ac7bee3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-95c1749d8ce02039904ab8296034427f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-53f3c6554c55bf1052785c9e9ac7bee3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-279bbe1d75d0d3718e927fd4decf34a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9bea70ce92de01961cd449af2b635db7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-279bbe1d75d0d3718e927fd4decf34a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -281,13 +281,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Interactive Notebooks</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -298,9 +298,35 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#hands-on-learning-with-jupyter-notebooks" id="toc-hands-on-learning-with-jupyter-notebooks" class="nav-link active" data-scroll-target="#hands-on-learning-with-jupyter-notebooks">Hands-On Learning with Jupyter Notebooks</a>
+  <ul class="collapse">
+  <li><a href="#fundamentals-data-science-basics" id="toc-fundamentals-data-science-basics" class="nav-link" data-scroll-target="#fundamentals-data-science-basics">Fundamentals &amp; Data Science Basics</a></li>
+  <li><a href="#mathematical-foundations" id="toc-mathematical-foundations" class="nav-link" data-scroll-target="#mathematical-foundations">Mathematical Foundations</a></li>
+  <li><a href="#optimization-gradient-methods" id="toc-optimization-gradient-methods" class="nav-link" data-scroll-target="#optimization-gradient-methods">Optimization &amp; Gradient Methods</a></li>
+  <li><a href="#supervised-learning-algorithms" id="toc-supervised-learning-algorithms" class="nav-link" data-scroll-target="#supervised-learning-algorithms">Supervised Learning Algorithms</a></li>
+  <li><a href="#model-evaluation-selection" id="toc-model-evaluation-selection" class="nav-link" data-scroll-target="#model-evaluation-selection">Model Evaluation &amp; Selection</a></li>
+  <li><a href="#neural-networks-deep-learning" id="toc-neural-networks-deep-learning" class="nav-link" data-scroll-target="#neural-networks-deep-learning">Neural Networks &amp; Deep Learning</a></li>
+  <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning">Unsupervised Learning</a></li>
+  <li><a href="#advanced-topics" id="toc-advanced-topics" class="nav-link" data-scroll-target="#advanced-topics">Advanced Topics</a></li>
+  <li><a href="#special-applications" id="toc-special-applications" class="nav-link" data-scroll-target="#special-applications">Special Applications</a></li>
+  </ul></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
+  <ul class="collapse">
+  <li><a href="#running-notebooks" id="toc-running-notebooks" class="nav-link" data-scroll-target="#running-notebooks">Running Notebooks</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  </ul></li>
+  <li><a href="#tips-for-success" id="toc-tips-for-success" class="nav-link" data-scroll-target="#tips-for-success">Tips for Success</a></li>
+  <li><a href="#quick-navigation" id="toc-quick-navigation" class="nav-link" data-scroll-target="#quick-navigation">Quick Navigation</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
@@ -313,33 +339,33 @@ ul.task-list li input[type="checkbox"] {
 <section id="fundamentals-data-science-basics" class="level3">
 <h3 class="anchored" data-anchor-id="fundamentals-data-science-basics">Fundamentals &amp; Data Science Basics</h3>
 <ul>
-<li><a href="./notebooks/anscombe.html">Anscombe’s Quartet</a> - Why visualization matters</li>
-<li><a href="./notebooks/visualisation.html">Visualization Techniques</a> - Comprehensive plotting guide</li>
-<li><a href="./notebooks/numpy-pandas-basics.html">NumPy &amp; Pandas Basics</a> - Essential data manipulation</li>
-<li><a href="./notebooks/binomial.html">Binomial Distribution</a> - Probability foundations</li>
-<li><a href="./notebooks/tips.html">Tips Dataset Analysis</a> - Real-world data exploration</li>
-<li><a href="./notebooks/rule-based-vs-ml.html">Rule-Based vs ML</a> - When to use ML</li>
+<li><a href="notebooks/anscombe.ipynb">Anscombe’s Quartet</a> - Why visualization matters</li>
+<li><a href="notebooks/visualisation.ipynb">Visualization Techniques</a> - Comprehensive plotting guide</li>
+<li><a href="notebooks/numpy-pandas-basics.ipynb">NumPy &amp; Pandas Basics</a> - Essential data manipulation</li>
+<li><a href="notebooks/binomial.ipynb">Binomial Distribution</a> - Probability foundations</li>
+<li><a href="notebooks/tips.ipynb">Tips Dataset Analysis</a> - Real-world data exploration</li>
+<li><a href="notebooks/rule-based-vs-ml.ipynb">Rule-Based vs ML</a> - When to use ML</li>
 </ul>
 </section>
 <section id="mathematical-foundations" class="level3">
 <h3 class="anchored" data-anchor-id="mathematical-foundations">Mathematical Foundations</h3>
 <ul>
-<li><a href="./notebooks/basis.html">Basis Functions</a> - Linear algebra foundations</li>
-<li><a href="./notebooks/basis2.html">Basis Functions II</a> - Advanced basis concepts</li>
-<li><a href="./notebooks/contour.html">Contour Plots</a> - Visualizing functions</li>
-<li><a href="./notebooks/meshgrid.html">Meshgrid &amp; Contours</a> - Grid visualization</li>
-<li><a href="./notebooks/taylor.html">Taylor Series</a> - Mathematical approximations</li>
-<li><a href="./notebooks/polynomial_features.html">Polynomial Features</a> - Feature engineering</li>
-<li><a href="./notebooks/curse-dimensionality.html">Curse of Dimensionality</a> - High-dimensional problems</li>
+<li><a href="notebooks/basis.ipynb">Basis Functions</a> - Linear algebra foundations</li>
+<li><a href="notebooks/basis2.ipynb">Basis Functions II</a> - Advanced basis concepts</li>
+<li><a href="notebooks/contour.ipynb">Contour Plots</a> - Visualizing functions</li>
+<li><a href="notebooks/meshgrid-contour-explanation.ipynb">Meshgrid &amp; Contours</a> - Grid visualization</li>
+<li><a href="notebooks/taylor-series.ipynb">Taylor Series</a> - Mathematical approximations</li>
+<li><a href="notebooks/polynomial_features.ipynb">Polynomial Features</a> - Feature engineering</li>
+<li><a href="notebooks/curse-dimensionality.ipynb">Curse of Dimensionality</a> - High-dimensional problems</li>
 </ul>
 </section>
 <section id="optimization-gradient-methods" class="level3">
 <h3 class="anchored" data-anchor-id="optimization-gradient-methods">Optimization &amp; Gradient Methods</h3>
 <ul>
-<li><a href="./notebooks/Gradient Descent.html">Gradient Descent</a> - Core optimization</li>
-<li><a href="./notebooks/Gradient Descent-2d.html">Gradient Descent 2D</a> - Visual optimization</li>
-<li><a href="./notebooks/cost-iteration-notebook.html">Cost vs Iterations</a> - Convergence analysis</li>
-<li><a href="./notebooks/autodiff.html">Automatic Differentiation</a> - Modern backpropagation</li>
+<li><a href="notebooks/Gradient Descent.ipynb">Gradient Descent</a> - Core optimization</li>
+<li><a href="notebooks/Gradient Descent-2d.ipynb">Gradient Descent 2D</a> - Visual optimization</li>
+<li><a href="notebooks/cost-iteration-notebook.ipynb">Cost vs Iterations</a> - Convergence analysis</li>
+<li><a href="notebooks/autodiff.ipynb">Automatic Differentiation</a> - Modern backpropagation</li>
 </ul>
 </section>
 <section id="supervised-learning-algorithms" class="level3">
@@ -347,112 +373,112 @@ ul.task-list li input[type="checkbox"] {
 <section id="linear-models" class="level4">
 <h4 class="anchored" data-anchor-id="linear-models">Linear Models</h4>
 <ul>
-<li><a href="./notebooks/linear-regression.html">Linear Regression</a> - Basic regression</li>
-<li><a href="./notebooks/lin-reg-tutorial.html">Linear Regression Tutorial</a> - Step-by-step guide</li>
-<li><a href="./notebooks/geometric-linear-regression.html">Geometric Linear Regression</a> - Visual interpretation</li>
-<li><a href="./notebooks/Ridge.html">Ridge Regression</a> - Regularized regression</li>
-<li><a href="./notebooks/Lasso_Regression.html">Lasso Regression</a> - Sparse solutions</li>
+<li><a href="notebooks/linear-regression.ipynb">Linear Regression</a> - Basic regression</li>
+<li><a href="notebooks/lin-reg-tutorial.ipynb">Linear Regression Tutorial</a> - Step-by-step guide</li>
+<li><a href="notebooks/geometric-linear-regression.ipynb">Geometric Linear Regression</a> - Visual interpretation</li>
+<li><a href="notebooks/Ridge.ipynb">Ridge Regression</a> - Regularized regression</li>
+<li><a href="notebooks/Lasso_Regression.ipynb">Lasso Regression</a> - Sparse solutions</li>
 </ul>
 </section>
 <section id="classification-methods" class="level4">
 <h4 class="anchored" data-anchor-id="classification-methods">Classification Methods</h4>
 <ul>
-<li><a href="./notebooks/logistic-regression-torch.html">Logistic Regression</a> - PyTorch implementation</li>
-<li><a href="./notebooks/logistic-regression-cost.html">Logistic Regression Cost</a> - Loss function analysis</li>
-<li><a href="./notebooks/logistic-apple-oranges.html">Logistic: Apples vs Oranges</a> - Binary classification</li>
-<li><a href="./notebooks/logistic-circular.html">Logistic: Circular Data</a> - Non-linear boundaries</li>
-<li><a href="./notebooks/logistic-iris.html">Logistic: Iris Dataset</a> - Multi-class classification</li>
-<li><a href="./notebooks/logits-usage.html">Logits Usage</a> - Understanding logits</li>
+<li><a href="notebooks/logistic-regression-torch.ipynb">Logistic Regression</a> - PyTorch implementation</li>
+<li><a href="notebooks/logistic-regression-cost.ipynb">Logistic Regression Cost</a> - Loss function analysis</li>
+<li><a href="notebooks/logistic-apple-oranges.ipynb">Logistic: Apples vs Oranges</a> - Binary classification</li>
+<li><a href="notebooks/logistic-circular.ipynb">Logistic: Circular Data</a> - Non-linear boundaries</li>
+<li><a href="notebooks/logistic-iris.ipynb">Logistic: Iris Dataset</a> - Multi-class classification</li>
+<li><a href="notebooks/logits-usage.ipynb">Logits Usage</a> - Understanding logits</li>
 </ul>
 </section>
 <section id="tree-based-methods" class="level4">
 <h4 class="anchored" data-anchor-id="tree-based-methods">Tree-Based Methods</h4>
 <ul>
-<li><a href="./notebooks/decision-tree-discrete-input-discrete-output.html">Decision Trees: Discrete → Discrete</a></li>
-<li><a href="./notebooks/decision-tree-real-input-discrete-output.html">Decision Trees: Real → Discrete</a></li>
-<li><a href="./notebooks/decision-tree-real-input-real-output.html">Decision Trees: Real → Real</a></li>
-<li><a href="./notebooks/classes-trees.html">Decision Tree Classes</a> - Classification trees</li>
-<li><a href="./notebooks/dt_weighted.html">Weighted Decision Trees</a> - Sample weighting</li>
-<li><a href="./notebooks/ensemble-feature-importance.html">Ensemble Feature Importance</a></li>
-<li><a href="./notebooks/boosting-explanation.html">Boosting Explanation</a> - AdaBoost mechanics</li>
-<li><a href="./notebooks/ensemble-representation.html">Ensemble Representations</a></li>
+<li><a href="notebooks/decision-tree-discrete-input-discrete-output.ipynb">Decision Trees: Discrete → Discrete</a></li>
+<li><a href="notebooks/decision-tree-real-input-discrete-output.ipynb">Decision Trees: Real → Discrete</a></li>
+<li><a href="notebooks/decision-tree-real-input-real-output.ipynb">Decision Trees: Real → Real</a></li>
+<li><a href="notebooks/classes-tree.ipynb">Decision Tree Classes</a> - Classification trees</li>
+<li><a href="notebooks/dt_weighted.ipynb">Weighted Decision Trees</a> - Sample weighting</li>
+<li><a href="notebooks/ensemble-feature-importance.ipynb">Ensemble Feature Importance</a></li>
+<li><a href="notebooks/boosting-explanation.ipynb">Boosting Explanation</a> - AdaBoost mechanics</li>
+<li><a href="notebooks/representation-ensemble.ipynb">Ensemble Representations</a></li>
 </ul>
 </section>
 <section id="instance-based-learning" class="level4">
 <h4 class="anchored" data-anchor-id="instance-based-learning">Instance-Based Learning</h4>
 <ul>
-<li><a href="./notebooks/knn-variants.html">KNN Variants</a> - Different distance metrics</li>
-<li><a href="./notebooks/movie-recommendation-knn-mf.html">Movie Recommendation</a> - Collaborative filtering</li>
+<li><a href="notebooks/knn-variants.ipynb">KNN Variants</a> - Different distance metrics</li>
+<li><a href="notebooks/movie-recommendation-knn-mf.ipynb">Movie Recommendation</a> - Collaborative filtering</li>
 </ul>
 </section>
 <section id="support-vector-machines" class="level4">
 <h4 class="anchored" data-anchor-id="support-vector-machines">Support Vector Machines</h4>
 <ul>
-<li><a href="./notebooks/svm.html">SVM Basics</a> - Introduction to SVMs</li>
-<li><a href="./notebooks/svm-cvxopt.html">SVM with CVXOPT</a> - Optimization implementation</li>
-<li><a href="./notebooks/svm-kernel-understanding.html">SVM Kernel Understanding</a> - Kernel trick</li>
-<li><a href="./notebooks/svm-kernel.html">SVM Kernels</a> - Different kernel functions</li>
-<li><a href="./notebooks/svm-primal-dual.html">SVM Primal-Dual</a> - Mathematical foundations</li>
-<li><a href="./notebooks/svm-soft-margin.html">SVM Soft Margin</a> - Handling noise</li>
+<li><a href="notebooks/svm.ipynb">SVM Basics</a> - Introduction to SVMs</li>
+<li><a href="notebooks/svm-cvxopt.ipynb">SVM with CVXOPT</a> - Optimization implementation</li>
+<li><a href="notebooks/svm-kernel-understanding.ipynb">SVM Kernel Understanding</a> - Kernel trick</li>
+<li><a href="notebooks/svm-kernel.ipynb">SVM Kernels</a> - Different kernel functions</li>
+<li><a href="notebooks/svm-primal-dual.ipynb">SVM Primal-Dual</a> - Mathematical foundations</li>
+<li><a href="notebooks/svm-soft-margin.ipynb">SVM Soft Margin</a> - Handling noise</li>
 </ul>
 </section>
 </section>
 <section id="model-evaluation-selection" class="level3">
 <h3 class="anchored" data-anchor-id="model-evaluation-selection">Model Evaluation &amp; Selection</h3>
 <ul>
-<li><a href="./notebooks/bias-variance.html">Bias-Variance Analysis</a> - Fundamental tradeoff</li>
-<li><a href="./notebooks/bias-variance-charts.html">Bias-Variance Charts</a> - Visual analysis</li>
-<li><a href="./notebooks/cross-validation-diagrams.html">Cross-Validation Diagrams</a> - Validation strategies</li>
-<li><a href="./notebooks/pr-curve.html">PR Curves</a> - Precision-Recall analysis</li>
-<li><a href="./notebooks/dummy-baselines.html">Dummy Baselines</a> - Baseline comparisons</li>
-<li><a href="./notebooks/dummy-variables-multi-colinearity.html">Dummy Variables</a> - Encoding issues</li>
-<li><a href="./notebooks/hyperparameter-optimisation.html">Hyperparameter Optimization</a></li>
-<li><a href="./notebooks/hyperparams-experiments.html">Hyperparameter Experiments</a></li>
-<li><a href="./notebooks/confusion-mnist.html">Confusion Matrix: MNIST</a> - Multi-class evaluation</li>
+<li><a href="notebooks/bias-variance.ipynb">Bias-Variance Analysis</a> - Fundamental tradeoff</li>
+<li><a href="notebooks/bias-variance-charts.ipynb">Bias-Variance Charts</a> - Visual analysis</li>
+<li><a href="notebooks/cross-validation-diagrams.ipynb">Cross-Validation Diagrams</a> - Validation strategies</li>
+<li><a href="notebooks/pr-curve.ipynb">PR Curves</a> - Precision-Recall analysis</li>
+<li><a href="notebooks/dummy-baselines.ipynb">Dummy Baselines</a> - Baseline comparisons</li>
+<li><a href="notebooks/dummy-variables-multi-colinearity.ipynb">Dummy Variables</a> - Encoding issues</li>
+<li><a href="notebooks/hyperparameter-optimisation.ipynb">Hyperparameter Optimization</a></li>
+<li><a href="notebooks/hyperparams-experiments.ipynb">Hyperparameter Experiments</a></li>
+<li><a href="notebooks/confusion-mnist.ipynb">Confusion Matrix: MNIST</a> - Multi-class evaluation</li>
 </ul>
 </section>
 <section id="neural-networks-deep-learning" class="level3">
 <h3 class="anchored" data-anchor-id="neural-networks-deep-learning">Neural Networks &amp; Deep Learning</h3>
 <ul>
-<li><a href="./notebooks/perceptron-learning.html">Perceptron Learning</a> - Basic neural unit</li>
-<li><a href="./notebooks/convolution-operation.html">Convolutional Operations</a> - CNN fundamentals</li>
-<li><a href="./notebooks/convolution-operation-stride.html">Convolution with Stride</a> - Parameter effects</li>
-<li><a href="./notebooks/cnn.html">CNNs</a> - Complete CNN implementation</li>
-<li><a href="./notebooks/1d-cnn.html">1D CNNs</a> - Sequence processing</li>
-<li><a href="./notebooks/cnn-edge.html">CNN Edge Detection</a> - Feature visualization</li>
-<li><a href="./notebooks/lenet.html">LeNet Architecture</a> - Classic CNN</li>
-<li><a href="./notebooks/vgg-minst.html">VGG on MNIST</a> - Modern CNN</li>
-<li><a href="./notebooks/mnist-digits.html">MNIST Digits</a> - Digit classification</li>
-<li><a href="./notebooks/text_to_image.html">Image Generation</a> - Generative models</li>
-<li><a href="./notebooks/object-detection-segmentation.html">Object Detection</a> - Computer vision</li>
-<li><a href="./notebooks/siren.html">SIREN Networks</a> - Implicit neural representations</li>
-<li><a href="./notebooks/nn_vectorization_with_vmap_jaxtyping_and_beartype_zeel.html">NN Vectorization</a> - Efficient implementation</li>
+<li><a href="notebooks/perceptron-learning.ipynb">Perceptron Learning</a> - Basic neural unit</li>
+<li><a href="notebooks/convolution-operation.ipynb">Convolutional Operations</a> - CNN fundamentals</li>
+<li><a href="notebooks/convolution-operation-stride.ipynb">Convolution with Stride</a> - Parameter effects</li>
+<li><a href="notebooks/cnn.ipynb">CNNs</a> - Complete CNN implementation</li>
+<li><a href="notebooks/1d-cnn.ipynb">1D CNNs</a> - Sequence processing</li>
+<li><a href="notebooks/cnn-edge.ipynb">CNN Edge Detection</a> - Feature visualization</li>
+<li><a href="notebooks/lenet.ipynb">LeNet Architecture</a> - Classic CNN</li>
+<li><a href="notebooks/vgg-minst.ipynb">VGG on MNIST</a> - Modern CNN</li>
+<li><a href="notebooks/mnist-digits.ipynb">MNIST Digits</a> - Digit classification</li>
+<li><a href="notebooks/generate-image.ipynb">Image Generation</a> - Generative models</li>
+<li><a href="notebooks/object-detection.ipynb">Object Detection</a> - Computer vision</li>
+<li><a href="notebooks/siren.ipynb">SIREN Networks</a> - Implicit neural representations</li>
+<li><a href="notebooks/nn_vectorization_with_vmap_jaxtyping_and_beartype_zeel.ipynb">NN Vectorization</a> - Efficient implementation</li>
 </ul>
 </section>
 <section id="unsupervised-learning" class="level3">
 <h3 class="anchored" data-anchor-id="unsupervised-learning">Unsupervised Learning</h3>
 <ul>
-<li><a href="./notebooks/pca.html">Principal Component Analysis</a> - Dimensionality reduction</li>
-<li><a href="./notebooks/tensor-factorisation.html">Tensor Factorization</a> - Matrix decomposition</li>
+<li><a href="notebooks/pca.ipynb">Principal Component Analysis</a> - Dimensionality reduction</li>
+<li><a href="notebooks/tensor-factorisation.ipynb">Tensor Factorization</a> - Matrix decomposition</li>
 </ul>
 </section>
 <section id="advanced-topics" class="level3">
 <h3 class="anchored" data-anchor-id="advanced-topics">Advanced Topics</h3>
 <ul>
-<li><a href="./notebooks/autoregressive_model.html">Autoregressive Models</a> - Time series prediction</li>
-<li><a href="./notebooks/rl-2.html">Q-Learning</a> - Reinforcement learning basics</li>
-<li><a href="./notebooks/rl-3.html">Deep Q-Learning</a> - Neural RL</li>
-<li><a href="./notebooks/rl-1.html">RL Gym Environments</a> - Practice environments</li>
-<li><a href="./notebooks/SFS_and_BFS.html">Feature Selection</a> - Forward/backward selection</li>
-<li><a href="./notebooks/Sklearn_on_GPU.html">Sklearn on GPU</a> - Performance optimization</li>
-<li><a href="./notebooks/ZeroShot_FewShot.html">Zero/Few Shot Learning</a> - Modern ML paradigms</li>
+<li><a href="notebooks/autoregressive_model.ipynb">Autoregressive Models</a> - Time series prediction</li>
+<li><a href="notebooks/rl-qlearning.ipynb">Q-Learning</a> - Reinforcement learning basics</li>
+<li><a href="notebooks/rl-qlearning-deep.ipynb">Deep Q-Learning</a> - Neural RL</li>
+<li><a href="notebooks/rl-gym-environments.ipynb">RL Gym Environments</a> - Practice environments</li>
+<li><a href="notebooks/SFS_and_BFS.ipynb">Feature Selection</a> - Forward/backward selection</li>
+<li><a href="notebooks/Sklearn_on_GPU.ipynb">Sklearn on GPU</a> - Performance optimization</li>
+<li><a href="notebooks/ZeroShot_FewShot.ipynb">Zero/Few Shot Learning</a> - Modern ML paradigms</li>
 </ul>
 </section>
 <section id="special-applications" class="level3">
 <h3 class="anchored" data-anchor-id="special-applications">Special Applications</h3>
 <ul>
-<li><a href="./notebooks/names.html">Names Analysis</a> - Text processing</li>
-<li><a href="./notebooks/transcript.html">Audio Transcription</a> - Speech processing</li>
+<li><a href="notebooks/names.ipynb">Names Analysis</a> - Text processing</li>
+<li><a href="notebooks/transcript.ipynb">Audio Transcription</a> - Speech processing</li>
 </ul>
 <hr>
 </section>
