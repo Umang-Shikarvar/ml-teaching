@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Slides – Machine Learning Resources</title>
+<title>Lecture Slides – Machine Learning Resources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,66 +71,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-filename','listing-file-modified','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 25,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-filename","listing-file-modified","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -342,13 +281,13 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Slides</h1>
+    <div class="quarto-title column-page">
+      <h1 class="title">Lecture Slides</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta column-page">
 
       
     
@@ -359,464 +298,121 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(29)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
 
 
 
+<section id="course-materials-by-category" class="level2">
+<h2 class="anchored" data-anchor-id="course-materials-by-category">Course Materials by Category</h2>
+<section id="basics-foundations" class="level3">
+<h3 class="anchored" data-anchor-id="basics-foundations">Basics &amp; Foundations</h3>
+<p>Fundamental concepts and prerequisites for machine learning.</p>
+<ul>
+<li><a href="basics/slides/1-introduction-ml.pdf">Introduction and Logistics</a></li>
+<li><a href="basics/slides/accuracy_convention.pdf">Convention, Metrics, Classification, Regression</a></li>
+<li><a href="basics/slides/shuffling.pdf">Data Shuffling</a></li>
+<li><a href="basics/slides/misc.pdf">Miscellaneous Topics</a></li>
+</ul>
+</section>
+<section id="mathematical-foundations" class="level3">
+<h3 class="anchored" data-anchor-id="mathematical-foundations">Mathematical Foundations</h3>
+<p>Core mathematical concepts underlying machine learning algorithms.</p>
+<ul>
+<li><a href="maths/slides/ml-maths.pdf">Mathematical Foundations</a></li>
+<li><a href="maths/slides/ml-maths-2-contour.pdf">Contour Plots &amp; Visualization</a></li>
+<li><a href="maths/slides/mvn.pdf">Multivariate Normal Distribution</a></li>
+<li><a href="maths/slides/mvn2.pdf">Multivariate Normal II</a></li>
+<li><a href="maths/slides/kkt-conditions/kkt-conditions.pdf">KKT Conditions</a></li>
+<li><a href="maths/slides/find-widths.pdf">Finding Widths</a></li>
+<li><a href="maths/slides/time_complexity.pdf">Time Complexity</a></li>
+</ul>
+</section>
+<section id="optimization-algorithms" class="level3">
+<h3 class="anchored" data-anchor-id="optimization-algorithms">Optimization Algorithms</h3>
+<p>Techniques for finding optimal solutions in machine learning.</p>
+<ul>
+<li><a href="optimization/slides/gradient-descent.pdf">Gradient Descent</a></li>
+<li><a href="optimization/slides/coordinate_descent.pdf">Coordinate Descent</a></li>
+<li><a href="optimization/slides/subgradient.pdf">Subgradient Methods</a></li>
+<li><a href="optimization/slides/convexity/convexity.pdf">Convexity</a></li>
+<li><a href="optimization/slides/SGD.pdf">Stochastic Gradient Descent</a></li>
+</ul>
+</section>
+<section id="supervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="supervised-learning">Supervised Learning</h3>
+<p>Algorithms that learn from labeled data.</p>
+<ul>
+<li><a href="supervised/slides/decision-trees.pdf">Decision Trees</a></li>
+<li><a href="supervised/slides/bias-variance.pdf">Bias-Variance Tradeoff</a></li>
+<li><a href="supervised/slides/bias-variance-2.pdf">Bias-Variance II</a></li>
+<li><a href="supervised/slides/cross-validation.pdf">Cross-Validation</a></li>
+<li><a href="supervised/slides/ensemble.pdf">Ensemble Methods</a></li>
+<li><a href="supervised/slides/linear-regression.pdf">Linear Regression</a></li>
+<li><a href="supervised/slides/logistic-1.pdf">Logistic Regression</a></li>
+<li><a href="supervised/slides/knn.pdf">K-Nearest Neighbors</a></li>
+<li><a href="supervised/slides/naive-bayes.pdf">Naive Bayes</a></li>
+<li><a href="supervised/slides/bayesian-nets.pdf">Bayesian Networks</a></li>
+<li><a href="supervised/slides/ridge.pdf">Ridge Regression</a></li>
+<li><a href="supervised/slides/Lasso.pdf">Lasso Regression</a></li>
+<li><a href="supervised/slides/feature-selection.pdf">Feature Selection</a></li>
+<li><a href="supervised/slides/svm-intro.pdf">SVM Introduction</a></li>
+<li><a href="supervised/slides/svm-soft-margin.pdf">SVM Soft Margin</a></li>
+<li><a href="supervised/slides/svm-kernel.pdf">SVM Kernel Methods</a></li>
+<li><a href="supervised/slides/svm-2-2.pdf">More SVM Topics</a></li>
+</ul>
+</section>
+<section id="neural-networks-deep-learning" class="level3">
+<h3 class="anchored" data-anchor-id="neural-networks-deep-learning">Neural Networks &amp; Deep Learning</h3>
+<p>Modern neural network architectures and deep learning techniques.</p>
+<ul>
+<li><a href="neural-networks/slides/MLP.pdf">Multi-Layer Perceptrons</a></li>
+<li><a href="neural-networks/slides/CNN.pdf">Convolutional Neural Networks</a></li>
+<li><a href="neural-networks/slides/1d-cnn.pdf">1D CNNs</a></li>
+<li><a href="neural-networks/slides/autograd.pdf">Automatic Differentiation</a></li>
+</ul>
+</section>
+<section id="advanced-topics" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-topics">Advanced Topics</h3>
+<p>Specialized techniques and cutting-edge approaches.</p>
+<ul>
+<li><a href="advanced/slides/forecasting.pdf">Time Series Forecasting</a></li>
+<li><a href="advanced/slides/rl.pdf">Reinforcement Learning</a></li>
+</ul>
+</section>
+<section id="unsupervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="unsupervised-learning">Unsupervised Learning</h3>
+<p>Algorithms that find patterns in unlabeled data.</p>
+<ul>
+<li><a href="unsupervised/slides/unsupervised.pdf">Clustering &amp; Dimensionality Reduction</a></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="how-to-use-these-materials" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use-these-materials">How to Use These Materials</h2>
+<ul>
+<li><strong>For Students</strong>: Navigate through topics sequentially, starting with Basics &amp; Foundations</li>
+<li><strong>For Instructors</strong>: Each category is self-contained and can be taught independently</li>
+<li><strong>PDF Quality</strong>: All slides are optimized for both viewing and printing</li>
+</ul>
+</section>
+<section id="quick-links" class="level2">
+<h2 class="anchored" data-anchor-id="quick-links">Quick Links</h2>
+<ul>
+<li><a href="./notebooks.html">Interactive Notebooks</a> - Hands-on coding examples</li>
+<li><a href="./index.html">Course Homepage</a> - Return to main page</li>
+<li><a href="https://nipunbatra.github.io">Instructor</a> - Nipun Batra’s homepage</li>
+</ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1752817625870">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./advanced/slides/rl.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-rl.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:05 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1752817625954">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./basics/slides/1-introduction-ml.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-1-introduction-ml.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:05 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1752817625956">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./basics/slides/accuracy_convention.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-accuracy_convention.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:05 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1752817625957">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./basics/slides/misc.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-misc.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:05 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-file-modified-sort="1752817626070">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./maths/slides/constrained-1.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-constrained-1.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:06 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1752817626071">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./maths/slides/constrained-2.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-constrained-2.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:06 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-file-modified-sort="1752817626072">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./maths/slides/ml-maths.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-ml-maths.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:06 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-listing-file-modified-sort="1752817626106">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./maths/slides/time_complexity.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-time_complexity.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:06 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-listing-file-modified-sort="1752817626162">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./neural-networks/slides/1d-cnn.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-1d-cnn.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:06 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-listing-file-modified-sort="1752817626169">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./neural-networks/slides/CNN.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-CNN.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:06 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-listing-file-modified-sort="1752817626208">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./neural-networks/slides/autograd.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-autograd.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:06 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="11" data-listing-file-modified-sort="1752817626232">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./neural-networks/slides/mlp.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-mlp.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:06 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="12" data-listing-file-modified-sort="1752817626600">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./optimization/slides/SGD.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-SGD.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:06 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="13" data-listing-file-modified-sort="1752817627312">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/KNN-approx.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-KNN-approx.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="14" data-listing-file-modified-sort="1752817627320">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/Logistic-Hessian.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-Logistic-Hessian.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="15" data-listing-file-modified-sort="1752817627325">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/Logistic-vectorisation.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-Logistic-vectorisation.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="16" data-listing-file-modified-sort="1752817627330">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/MovieRecommendation.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-MovieRecommendation.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="17" data-listing-file-modified-sort="1752817627335">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/Weighted-least.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-Weighted-least.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="18" data-listing-file-modified-sort="1752817627337">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/bias-variance.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-bias-variance.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="19" data-listing-file-modified-sort="1752817627340">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/cross-validation.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-cross-validation.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="20" data-listing-file-modified-sort="1752817627347">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/decision-trees.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-decision-trees.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="21" data-listing-file-modified-sort="1752817627358">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/ensemble.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-ensemble.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="22" data-listing-file-modified-sort="1752817627365">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/knn.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-knn.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="23" data-listing-file-modified-sort="1752817627372">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/lasso-regression.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-lasso-regression.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="24" data-listing-file-modified-sort="1752817627374">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/linear-regression.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-linear-regression.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="25" data-listing-file-modified-sort="1752817627385">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/ridge-regression.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-ridge-regression.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="26" data-listing-file-modified-sort="1752817627396">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/svm-intro.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-svm-intro.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="27" data-listing-file-modified-sort="1752817627398">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./supervised/slides/svm-soft-margin.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-svm-soft-margin.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="28" data-listing-file-modified-sort="1752817627421">
-<div class="body">
-
-</div>
-<div class="metadata">
-<a href="./unsupervised/slides/unsupervised.pdf" class="no-external">
-<div class="metadata-value listing-filename">
-unsupervised.pdf
-</div>
-<div class="metadata-value listing-file-modified">
-7/18/25, 5:47:07 AM
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
-  <ul class="pagination"></ul>
-</nav>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

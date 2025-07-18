@@ -426,6 +426,74 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Notebooks</strong> → main <code>/notebooks/</code> directory (flat structure)</li>
 <li><strong>Presentations</strong> (.key, .pptx) → <code>category/slides/</code></li>
 </ol>
+<section id="additional-directory-removals" class="level3">
+<h3 class="anchored" data-anchor-id="additional-directory-removals">Additional Directory Removals</h3>
+<ul>
+<li><code>linear-reg/</code> → DELETED (superseded by supervised/slides/linear-regression.tex)
+<ul>
+<li><code>Linear Regression Notebook.ipynb</code> → <code>notebooks/linear-regression.ipynb</code></li>
+<li><code>*.eps</code> files → <code>supervised/assets/linear-regression/figures/</code></li>
+</ul></li>
+<li><code>linear-regression-geometric/</code> → DELETED (superseded by main linear regression slides)</li>
+<li><code>linear-regression-time-complexity/</code> → DELETED (superseded by main linear regression slides)</li>
+<li><code>naive-bayes/</code> → MIGRATED to supervised/
+<ul>
+<li><code>bayesian-nets.tex</code> → <code>supervised/slides/bayesian-nets.tex</code></li>
+<li><code>naive-bayes.tex</code> → <code>supervised/slides/naive-bayes.tex</code></li>
+<li><code>*.pdf</code> files → <code>supervised/assets/naive-bayes/figures/</code></li>
+</ul></li>
+<li><code>mvn/</code> → MIGRATED to maths/
+<ul>
+<li><code>mvn.tex</code> → <code>maths/slides/mvn.tex</code></li>
+<li><code>mvn2.tex</code> → <code>maths/slides/mvn2.tex</code></li>
+<li><code>*.png</code> files → <code>maths/assets/multivariate-normal/figures/</code></li>
+</ul></li>
+<li><code>knn/</code> → MIGRATED to supervised/
+<ul>
+<li><code>knn.tex</code> → <code>supervised/slides/knn.tex</code></li>
+<li><code>knn.pdf</code> → <code>supervised/slides/knn.pdf</code></li>
+</ul></li>
+<li><code>forecasting/</code> → MIGRATED to advanced/
+<ul>
+<li><code>forecasting.tex</code> → <code>advanced/slides/forecasting.tex</code></li>
+<li><code>*.png</code> files → <code>advanced/assets/forecasting/figures/</code></li>
+</ul></li>
+<li><code>ridge/</code> → MIGRATED to supervised/
+<ul>
+<li><code>ridge.tex</code> → <code>supervised/slides/ridge.tex</code></li>
+<li>All assets → <code>supervised/assets/ridge/figures/</code></li>
+</ul></li>
+<li><code>bias-variance/</code> → MIGRATED to supervised/
+<ul>
+<li><code>*.tex</code> files → <code>supervised/slides/</code></li>
+<li><code>Charts.ipynb</code> → <code>notebooks/bias-variance-charts.ipynb</code></li>
+<li><code>images/</code> and <code>imgs/</code> → <code>supervised/assets/bias-variance/figures/</code></li>
+</ul></li>
+<li><code>shuffling/</code> → MIGRATED to basics/
+<ul>
+<li><code>shuffling.tex</code> → <code>basics/slides/shuffling.tex</code></li>
+<li><code>imgs/</code> → <code>basics/assets/shuffling/figures/</code></li>
+</ul></li>
+<li>Root SVM files → MIGRATED to supervised/
+<ul>
+<li><code>svm-*.tex</code> and <code>svm-*.pdf</code> → <code>supervised/slides/</code></li>
+<li><code>SVM/</code> directory → <code>supervised/assets/svm/notes/</code></li>
+</ul></li>
+<li><code>entropy_calculation.numbers</code> → <code>supervised/assets/decision-trees/notes/</code></li>
+<li><code>feature-selection/</code> → MIGRATED to supervised/
+<ul>
+<li><code>feature-selection.tex</code> → <code>supervised/slides/feature-selection.tex</code></li>
+</ul></li>
+<li><code>MLP.tex</code> → <code>neural-networks/slides/MLP.tex</code></li>
+<li><code>rl.tex</code> → <code>advanced/slides/rl.tex</code></li>
+</ul>
+</section>
+<section id="deduplication" class="level3">
+<h3 class="anchored" data-anchor-id="deduplication">Deduplication</h3>
+<ul>
+<li>Removed duplicate <code>gradient-descent.tex</code> from supervised/ (kept in optimization/ where it belongs)</li>
+</ul>
+</section>
 </section>
 <section id="cleanup-actions" class="level2">
 <h2 class="anchored" data-anchor-id="cleanup-actions">Cleanup Actions</h2>
