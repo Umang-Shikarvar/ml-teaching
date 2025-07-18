@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c51ce736e37c25f91b39412222dd9767.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-1280917311c3c9a06b5896637ba4a974.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-c51ce736e37c25f91b39412222dd9767.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-321e95ac972b1efa9c60460c7bdacf11.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-cd44e1b4d044e75ed60a0e36e437f2d2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-321e95ac972b1efa9c60460c7bdacf11.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -362,9 +362,9 @@ window.Quarto = {
   <li><a href="#for-a-tree" id="toc-for-a-tree" class="nav-link" data-scroll-target="#for-a-tree">For a tree:</a></li>
   <li><a href="#for-a-forest" id="toc-for-a-forest" class="nav-link" data-scroll-target="#for-a-forest">For a forest:</a></li>
   <li><a href="#aside" id="toc-aside" class="nav-link" data-scroll-target="#aside">Aside:</a></li>
-  <li><a href="#bootstrap-code" id="toc-bootstrap-code" class="nav-link" data-scroll-target="#bootstrap-code">Bootstrap code:</a></li>
+  <li><a href="#bootstrap-codein-the-random_forest.fit-functionbootstrap_code" id="toc-bootstrap-codein-the-random_forest.fit-functionbootstrap_code" class="nav-link" data-scroll-target="#bootstrap-codein-the-random_forest.fit-functionbootstrap_code">Bootstrap code:in the random_forest.fit() function<img src="../shared/figures/diagrams/ensemble/bootstrap_code.png" class="img-fluid" alt="bootstrap_code"></a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ensemble-feature-importance.html.ipynb" download="ensemble-feature-importance.html.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -1087,8 +1087,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="cell-12" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the tree</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>Image(filename<span class="op">=</span><span class="st">'../figures/ensemble/feature-imp-0.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the treeImage(filename='../shared/figures/ensemble/feature-imp-0.png')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <div>
@@ -1410,10 +1409,7 @@ dtype: float64</code></pre>
 <div id="cell-35" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>ser <span class="op">=</span> pd.Series(sklearn_imp_forest, index<span class="op">=</span>iris.columns[:<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>ser.plot(kind<span class="op">=</span><span class="st">'bar'</span>, rot<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>format_axes(plt.gca())</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'../figures/ensemble/feature-imp-forest.pdf'</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>ser <span class="op">=</span> pd.Series(sklearn_imp_forest, index<span class="op">=</span>iris.columns[:<span class="op">-</span><span class="dv">1</span>])ser.plot(kind<span class="op">=</span><span class="st">'bar'</span>, rot<span class="op">=</span><span class="dv">0</span>)format_axes(plt.gca())plt.savefig(<span class="st">'../shared/figures/ensemble/feature-imp-forest.pdf'</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -1438,15 +1434,8 @@ dtype: float64</code></pre>
 <p><code>tree.tree_.children_right[node]</code> returns the node number of the right child of the node</p>
 <p>if there is no left or right child, it returns -1</p>
 </section>
-<section id="bootstrap-code" class="level3">
-<h3 class="anchored" data-anchor-id="bootstrap-code">Bootstrap code:</h3>
-<p>in the random_forest.fit() function</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../diagrams/ensemble/bootstrap_code.png" class="img-fluid figure-img"></p>
-<figcaption>bootstrap_code</figcaption>
-</figure>
-</div>
+<section id="bootstrap-codein-the-random_forest.fit-functionbootstrap_code" class="level3">
+<h3 class="anchored" data-anchor-id="bootstrap-codein-the-random_forest.fit-functionbootstrap_code">Bootstrap code:in the random_forest.fit() function<img src="../shared/figures/diagrams/ensemble/bootstrap_code.png" class="img-fluid" alt="bootstrap_code"></h3>
 
 
 </section>
