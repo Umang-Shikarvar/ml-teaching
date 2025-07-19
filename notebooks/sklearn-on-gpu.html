@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Kalash Kankaria">
+<meta name="dcterms.date" content="2024-02-12">
 
-<title>Notebook to demonstrate Zero shot and Few shot Learning – Machine Learning Course</title>
+<title>Sklearn on GPU – Machine Learning Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -324,10 +326,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zero-shot" id="toc-zero-shot" class="nav-link active" data-scroll-target="#zero-shot">Zero Shot</a></li>
-  <li><a href="#few-shot" id="toc-few-shot" class="nav-link" data-scroll-target="#few-shot">Few Shot</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References:</a></li>
+  <li><a href="#install-the-latest-version-of-scikit-learn-library" id="toc-install-the-latest-version-of-scikit-learn-library" class="nav-link" data-scroll-target="#install-the-latest-version-of-scikit-learn-library">Install the latest version of scikit-learn library</a></li>
+  <li><a href="#install-array-api-compat-library-that-supports-array-api" id="toc-install-array-api-compat-library-that-supports-array-api" class="nav-link" data-scroll-target="#install-array-api-compat-library-that-supports-array-api">Install array-api-compat library that supports Array API</a></li>
+  <li><a href="#imports" id="toc-imports" class="nav-link" data-scroll-target="#imports">Imports</a></li>
+  <li><a href="#create-classification-data" id="toc-create-classification-data" class="nav-link" data-scroll-target="#create-classification-data">Create Classification Data</a></li>
+  <li><a href="#globally-set-configuration" id="toc-globally-set-configuration" class="nav-link" data-scroll-target="#globally-set-configuration">Globally set configuration</a></li>
+  <li><a href="#lineardiscriminantanalysis" id="toc-lineardiscriminantanalysis" class="nav-link" data-scroll-target="#lineardiscriminantanalysis">LinearDiscriminantAnalysis</a>
+  <ul class="collapse">
+  <li><a href="#sklearn-performance-on-cpu" id="toc-sklearn-performance-on-cpu" class="nav-link" data-scroll-target="#sklearn-performance-on-cpu">Sklearn Performance on CPU</a></li>
+  <li><a href="#sklearn-performance-on-gpu" id="toc-sklearn-performance-on-gpu" class="nav-link" data-scroll-target="#sklearn-performance-on-gpu">Sklearn Performance on GPU</a></li>
+  </ul></li>
+  <li><a href="#train-model-on-gpu-and-transfer-to-cpu-for-deployment" id="toc-train-model-on-gpu-and-transfer-to-cpu-for-deployment" class="nav-link" data-scroll-target="#train-model-on-gpu-and-transfer-to-cpu-for-deployment">Train model on GPU and transfer to CPU for deployment</a></li>
+  <li><a href="#pca-decomposition" id="toc-pca-decomposition" class="nav-link" data-scroll-target="#pca-decomposition">PCA Decomposition</a>
+  <ul class="collapse">
+  <li><a href="#sklearn-performance-on-cpu-1" id="toc-sklearn-performance-on-cpu-1" class="nav-link" data-scroll-target="#sklearn-performance-on-cpu-1">Sklearn Performance on CPU</a></li>
+  <li><a href="#sklearn-performance-on-gpu-1" id="toc-sklearn-performance-on-gpu-1" class="nav-link" data-scroll-target="#sklearn-performance-on-gpu-1">Sklearn Performance on GPU</a></li>
+  </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ZeroShot_FewShot.out.ipynb" download="ZeroShot_FewShot.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="sklearn-on-gpu.out.ipynb" download="sklearn-on-gpu.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -335,14 +352,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Notebook to demonstrate Zero shot and Few shot Learning</h1>
-</div>
+<h1 class="title">Sklearn on GPU</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">ML</div>
+    <div class="quarto-category">Tutorial</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Kalash Kankaria </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 12, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -352,273 +385,244 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="cell-2" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install langchain langchain_groq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References:</h2>
+<p>https://scikit-learn.org/stable/modules/array_api.html</p>
+<p>https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA</p>
+<p>https://github.com/data-apis/array-api-compat</p>
+<p>https://labs.quansight.org/blog/array-api-support-scikit-learn</p>
+</section>
+<section id="install-the-latest-version-of-scikit-learn-library" class="level1">
+<h1>Install the latest version of scikit-learn library</h1>
+<div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:334}}" data-outputid="aba1fc05-12d6-4698-9e6e-ef113632067b">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> pip install scikit<span class="op">-</span>learn<span class="op">==</span><span class="fl">1.4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
-<pre>Collecting langchain
+<pre>Collecting scikit-learn==1.4
 
-  Downloading langchain-0.2.13-py3-none-any.whl (997 kB)
+  Downloading scikit_learn-1.4.0-1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.1 MB)
 
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">997.8/997.8 kB</span> <span class="ansi-red-fg">3.7 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>a <span class="ansi-cyan-fg">0:00:01</span>
+     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">12.1/12.1 MB</span> <span class="ansi-red-fg">57.9 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
 
-Collecting langchain_groq
+Requirement already satisfied: numpy&lt;2.0,&gt;=1.19.5 in /usr/local/lib/python3.10/dist-packages (from scikit-learn==1.4) (1.23.5)
 
-  Downloading langchain_groq-0.1.9-py3-none-any.whl (14 kB)
+Requirement already satisfied: scipy&gt;=1.6.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn==1.4) (1.11.4)
 
-Requirement already satisfied: PyYAML&gt;=5.3 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from langchain) (6.0)
+Requirement already satisfied: joblib&gt;=1.2.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn==1.4) (1.3.2)
 
-Collecting SQLAlchemy&lt;3,&gt;=1.4 (from langchain)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn==1.4) (3.2.0)
 
-  Downloading SQLAlchemy-2.0.32-cp310-cp310-macosx_11_0_arm64.whl (2.1 MB)
+Installing collected packages: scikit-learn
 
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">2.1/2.1 MB</span> <span class="ansi-red-fg">6.9 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>a <span class="ansi-cyan-fg">0:00:01</span>
+  Attempting uninstall: scikit-learn
 
-Collecting aiohttp&lt;4.0.0,&gt;=3.8.3 (from langchain)
+    Found existing installation: scikit-learn 1.2.2
 
-  Downloading aiohttp-3.10.3-cp310-cp310-macosx_11_0_arm64.whl (388 kB)
+    Uninstalling scikit-learn-1.2.2:
 
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">388.5/388.5 kB</span> <span class="ansi-red-fg">6.9 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>a <span class="ansi-cyan-fg">0:00:01</span>
+      Successfully uninstalled scikit-learn-1.2.2
 
-Collecting async-timeout&lt;5.0.0,&gt;=4.0.0 (from langchain)
-
-  Downloading async_timeout-4.0.3-py3-none-any.whl (5.7 kB)
-
-Collecting langchain-core&lt;0.3.0,&gt;=0.2.30 (from langchain)
-
-  Downloading langchain_core-0.2.30-py3-none-any.whl (384 kB)
-
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">384.8/384.8 kB</span> <span class="ansi-red-fg">7.8 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>a <span class="ansi-cyan-fg">0:00:01</span>
-
-Collecting langchain-text-splitters&lt;0.3.0,&gt;=0.2.0 (from langchain)
-
-  Downloading langchain_text_splitters-0.2.2-py3-none-any.whl (25 kB)
-
-Collecting langsmith&lt;0.2.0,&gt;=0.1.17 (from langchain)
-
-  Downloading langsmith-0.1.99-py3-none-any.whl (140 kB)
-
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">140.4/140.4 kB</span> <span class="ansi-red-fg">13.7 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-
-Requirement already satisfied: numpy&lt;2,&gt;=1 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from langchain) (1.24.3)
-
-Collecting pydantic&lt;3,&gt;=1 (from langchain)
-
-  Downloading pydantic-2.8.2-py3-none-any.whl (423 kB)
-
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">423.9/423.9 kB</span> <span class="ansi-red-fg">8.0 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>a <span class="ansi-cyan-fg">0:00:01</span>
-
-Requirement already satisfied: requests&lt;3,&gt;=2 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from langchain) (2.29.0)
-
-Requirement already satisfied: tenacity!=8.4.0,&lt;9.0.0,&gt;=8.1.0 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from langchain) (8.2.3)
-
-Collecting groq&lt;1,&gt;=0.4.1 (from langchain_groq)
-
-  Downloading groq-0.9.0-py3-none-any.whl (103 kB)
-
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">103.5/103.5 kB</span> <span class="ansi-red-fg">2.5 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>00:01
-
-Collecting aiohappyeyeballs&gt;=2.3.0 (from aiohttp&lt;4.0.0,&gt;=3.8.3-&gt;langchain)
-
-  Downloading aiohappyeyeballs-2.3.5-py3-none-any.whl (12 kB)
-
-Collecting aiosignal&gt;=1.1.2 (from aiohttp&lt;4.0.0,&gt;=3.8.3-&gt;langchain)
-
-  Downloading aiosignal-1.3.1-py3-none-any.whl (7.6 kB)
-
-Requirement already satisfied: attrs&gt;=17.3.0 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from aiohttp&lt;4.0.0,&gt;=3.8.3-&gt;langchain) (23.1.0)
-
-Collecting frozenlist&gt;=1.1.1 (from aiohttp&lt;4.0.0,&gt;=3.8.3-&gt;langchain)
-
-  Downloading frozenlist-1.4.1-cp310-cp310-macosx_11_0_arm64.whl (52 kB)
-
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">52.2/52.2 kB</span> <span class="ansi-red-fg">7.1 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-
-Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from aiohttp&lt;4.0.0,&gt;=3.8.3-&gt;langchain) (6.0.4)
-
-Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from aiohttp&lt;4.0.0,&gt;=3.8.3-&gt;langchain) (1.9.2)
-
-Requirement already satisfied: anyio&lt;5,&gt;=3.5.0 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from groq&lt;1,&gt;=0.4.1-&gt;langchain_groq) (3.6.2)
-
-Collecting distro&lt;2,&gt;=1.7.0 (from groq&lt;1,&gt;=0.4.1-&gt;langchain_groq)
-
-  Downloading distro-1.9.0-py3-none-any.whl (20 kB)
-
-Requirement already satisfied: httpx&lt;1,&gt;=0.23.0 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from groq&lt;1,&gt;=0.4.1-&gt;langchain_groq) (0.23.3)
-
-Requirement already satisfied: sniffio in /Users/nipun/mambaforge/lib/python3.10/site-packages (from groq&lt;1,&gt;=0.4.1-&gt;langchain_groq) (1.3.0)
-
-Collecting typing-extensions&lt;5,&gt;=4.7 (from groq&lt;1,&gt;=0.4.1-&gt;langchain_groq)
-
-  Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
-
-Collecting jsonpatch&lt;2.0,&gt;=1.33 (from langchain-core&lt;0.3.0,&gt;=0.2.30-&gt;langchain)
-
-  Downloading jsonpatch-1.33-py2.py3-none-any.whl (12 kB)
-
-Collecting packaging&lt;25,&gt;=23.2 (from langchain-core&lt;0.3.0,&gt;=0.2.30-&gt;langchain)
-
-  Downloading packaging-24.1-py3-none-any.whl (53 kB)
-
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">54.0/54.0 kB</span> <span class="ansi-red-fg">1.1 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>ta <span class="ansi-cyan-fg">0:00:01</span>
-
-Collecting orjson&lt;4.0.0,&gt;=3.9.14 (from langsmith&lt;0.2.0,&gt;=0.1.17-&gt;langchain)
-
-  Downloading orjson-3.10.7-cp310-cp310-macosx_10_15_x86_64.macosx_11_0_arm64.macosx_10_15_universal2.whl (251 kB)
-
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">251.3/251.3 kB</span> <span class="ansi-red-fg">9.1 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>
-
-Collecting annotated-types&gt;=0.4.0 (from pydantic&lt;3,&gt;=1-&gt;langchain)
-
-  Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
-
-Collecting pydantic-core==2.20.1 (from pydantic&lt;3,&gt;=1-&gt;langchain)
-
-  Downloading pydantic_core-2.20.1-cp310-cp310-macosx_11_0_arm64.whl (1.8 MB)
-
-     <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">1.8/1.8 MB</span> <span class="ansi-red-fg">6.0 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>a <span class="ansi-cyan-fg">0:00:01</span>
-
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from requests&lt;3,&gt;=2-&gt;langchain) (3.1.0)
-
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from requests&lt;3,&gt;=2-&gt;langchain) (3.4)
-
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from requests&lt;3,&gt;=2-&gt;langchain) (1.26.15)
-
-Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from requests&lt;3,&gt;=2-&gt;langchain) (2023.5.7)
-
-Requirement already satisfied: httpcore&lt;0.17.0,&gt;=0.15.0 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from httpx&lt;1,&gt;=0.23.0-&gt;groq&lt;1,&gt;=0.4.1-&gt;langchain_groq) (0.16.3)
-
-Requirement already satisfied: rfc3986[idna2008]&lt;2,&gt;=1.3 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from httpx&lt;1,&gt;=0.23.0-&gt;groq&lt;1,&gt;=0.4.1-&gt;langchain_groq) (1.5.0)
-
-Requirement already satisfied: jsonpointer&gt;=1.9 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from jsonpatch&lt;2.0,&gt;=1.33-&gt;langchain-core&lt;0.3.0,&gt;=0.2.30-&gt;langchain) (2.0)
-
-Requirement already satisfied: h11&lt;0.15,&gt;=0.13 in /Users/nipun/mambaforge/lib/python3.10/site-packages (from httpcore&lt;0.17.0,&gt;=0.15.0-&gt;httpx&lt;1,&gt;=0.23.0-&gt;groq&lt;1,&gt;=0.4.1-&gt;langchain_groq) (0.14.0)
-
-Installing collected packages: typing-extensions, packaging, orjson, jsonpatch, frozenlist, distro, async-timeout, annotated-types, aiohappyeyeballs, SQLAlchemy, pydantic-core, aiosignal, pydantic, aiohttp, langsmith, groq, langchain-core, langchain-text-splitters, langchain_groq, langchain
-
-  Attempting uninstall: typing-extensions
-
-    Found existing installation: typing_extensions 4.5.0
-
-    Uninstalling typing_extensions-4.5.0:
-
-      Successfully uninstalled typing_extensions-4.5.0
-
-  Attempting uninstall: packaging
-
-    Found existing installation: packaging 23.1
-
-    Uninstalling packaging-23.1:
-
-      Successfully uninstalled packaging-23.1
-
-  Attempting uninstall: jsonpatch
-
-    Found existing installation: jsonpatch 1.32
-
-    Uninstalling jsonpatch-1.32:
-
-      Successfully uninstalled jsonpatch-1.32
-
-<span class="ansi-red-fg">ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
-
-jupyter 1.0.0 requires qtconsole, which is not installed.
-
-streamlit 1.31.0 requires packaging&lt;24,&gt;=16.8, but you have packaging 24.1 which is incompatible.</span><span class="ansi-red-fg">
-
-</span>Successfully installed SQLAlchemy-2.0.32 aiohappyeyeballs-2.3.5 aiohttp-3.10.3 aiosignal-1.3.1 annotated-types-0.7.0 async-timeout-4.0.3 distro-1.9.0 frozenlist-1.4.1 groq-0.9.0 jsonpatch-1.33 langchain-0.2.13 langchain-core-0.2.30 langchain-text-splitters-0.2.2 langchain_groq-0.1.9 langsmith-0.1.99 orjson-3.10.7 packaging-24.1 pydantic-2.8.2 pydantic-core-2.20.1 typing-extensions-4.12.2
-
-Note: you may need to restart the kernel to use updated packages.
+Successfully installed scikit-learn-1.4.0
 </pre>
 </div>
 </div>
-</div>
-<div id="cell-3" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain_groq.chat_models <span class="im">import</span> ChatGroq</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-4" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"../secrets.json"</span>) <span class="im">as</span> f:</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    secrets <span class="op">=</span> json.load(f)   </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Groq_Token <span class="op">=</span> secrets[<span class="st">"groq"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-5" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Groq API and Models </span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>groq_models <span class="op">=</span> {<span class="st">"llama3-70b"</span>: <span class="st">"llama3-70b-8192"</span>, <span class="st">"mixtral"</span>: <span class="st">"mixtral-8x7b-32768"</span>, <span class="st">"gemma-7b"</span>: <span class="st">"gemma-7b-it"</span>,<span class="st">"llama3.1-70b"</span>:<span class="st">"llama-3.1-70b-versatile"</span>,<span class="st">"llama3-8b"</span>:<span class="st">"llama3-8b-8192"</span>,<span class="st">"llama3.1-8b"</span>:<span class="st">"llama-3.1-8b-instant"</span>,<span class="st">"gemma-9b"</span>:<span class="st">"gemma2-9b-it"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>NOTE : DO NOT SHARE THE API KEY WITH ANYONE. DO NOT COMMIT THE API KEY TO GITHUB.</strong></p>
-<p>Always do a sanity check before committing the code to github. If the key is found in the code, you will be penalized with a 0.5 marks deduction.</p>
-<section id="zero-shot" class="level1">
-<h1>Zero Shot</h1>
-<div id="cell-8" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Statement </span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"The product quality is amazing but the delivery was delayed. However I am happy with the customer service."</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sentence_2 <span class="op">=</span> <span class="st">"The product quality is amazing and the delivery was not delayed. I am happy with the customer service."</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># System Prompts </span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="ss">f"""</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ss">* You are a sentiment analysis model. </span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ss">* Your task is to analyze the sentiment expressed in the given text and classify it as 'positive', 'negative', or 'neutral'. </span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ss">* Provide the sentiment label and, if necessary, a brief explanation of your reasoning.</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ss">Sentence: </span><span class="sc">{</span>sentence<span class="sc">}</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span> </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># To use Groq LLMs </span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>model_name <span class="op">=</span> <span class="st">"llama3-70b"</span> <span class="co"># We can choose any model from the groq_models dictionary</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>llm <span class="op">=</span> ChatGroq(model<span class="op">=</span>groq_models[model_name], api_key<span class="op">=</span>Groq_Token, temperature<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> llm.invoke(query)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(answer.content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Sentiment label: Neutral
-
-Explanation: The sentence expresses mixed sentiments. The words "amazing" and "happy" convey a positive sentiment, indicating satisfaction with the product quality and customer service. However, the phrase "delivery was delayed" expresses a negative sentiment, indicating dissatisfaction with the delivery experience. Overall, the positive and negative sentiments balance each other out, resulting in a neutral sentiment label.</code></pre>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.colab-display-data+json</code></pre>
 </div>
 </div>
 </section>
-<section id="few-shot" class="level1">
-<h1>Few Shot</h1>
-<div id="cell-10" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Statement </span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"The product quality is amazing but the delivery was delayed. However I am happy with the customer service."</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># System Prompts </span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="ss">f"""</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ss">* You are a sentiment analysis model. </span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ss">* Your task is to analyze the sentiment expressed in the given text and classify it as 'positive', 'negative', or 'neutral'. </span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ss">* Provide the sentiment label and, if necessary, a brief explanation of your reasoning.</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ss">Here are few examples:</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ss">1. Sentence: 'The customer service was excellent, and I received my order quickly.'</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ss">Sentiment: Positive</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="ss">2. Sentence: 'The food was bland and the service was slow.'</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="ss">Sentiment: Negative</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="ss">3. Sentence: 'The product is okay, but it's not worth the price.'</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="ss">Sentiment: Neutral</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="ss">Sentence: </span><span class="sc">{</span>sentence<span class="sc">}</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span> </span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># To use Groq LLMs </span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>model_name <span class="op">=</span> <span class="st">"llama3-70b"</span> <span class="co"># We can choose any model from the groq_models dictionary</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>llm <span class="op">=</span> ChatGroq(model<span class="op">=</span>groq_models[model_name], api_key<span class="op">=</span>Groq_Token, temperature<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> llm.invoke(query)</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(answer.content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="install-array-api-compat-library-that-supports-array-api" class="level1">
+<h1>Install array-api-compat library that supports Array API</h1>
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="530a0724-d38b-4455-c404-0ca40fabe900">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python <span class="op">-</span>m pip install array<span class="op">-</span>api<span class="op">-</span>compat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Sentiment: Positive
-
-Explanation: Although the sentence mentions a negative aspect ("the delivery was delayed"), the positive sentiments ("The product quality is amazing" and "I am happy with the customer service") outweigh the negative one, resulting in an overall positive sentiment. The use of the word "amazing" and "happy" also indicates a strong positive emotion, which contributes to the positive sentiment classification.</code></pre>
+<pre><code>Collecting array-api-compat
+  Downloading array_api_compat-1.4.1-py3-none-any.whl (30 kB)
+Installing collected packages: array-api-compat
+Successfully installed array-api-compat-1.4.1</code></pre>
+</div>
+</div>
+</section>
+<section id="imports" class="level1">
+<h1>Imports</h1>
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="158d8e8d-85cd-4a0e-e91e-f1038bc0c8ca">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sklearn</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.discriminant_analysis <span class="im">import</span> LinearDiscriminantAnalysis</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_classification</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sklearn.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.4.0</code></pre>
+</div>
+</div>
+</section>
+<section id="create-classification-data" class="level1">
+<h1>Create Classification Data</h1>
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="b8631186-97ad-4d54-a041-de1ecbd35b12">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>X_np, y_np <span class="op">=</span> make_classification(random_state<span class="op">=</span><span class="dv">0</span>, n_samples<span class="op">=</span><span class="dv">500_000</span>, n_features<span class="op">=</span><span class="dv">300</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>X_np, y_np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>(array([[-1.81619458, -1.85550544,  1.0407837 , ...,  0.05972718,
+         -0.78920817, -1.17862744],
+        [-0.81112283,  1.22246367,  0.5230838 , ...,  0.34797711,
+         -0.96876649, -1.09807831],
+        [ 0.2102088 ,  1.78862513,  0.19437414, ...,  1.05634817,
+         -1.71915482,  0.09357639],
+        ...,
+        [ 0.41402928,  0.89958434,  0.98362959, ..., -0.80880198,
+          0.27123176, -0.52871488],
+        [-0.87256303,  1.32778686, -0.97017018, ...,  0.22443048,
+         -0.80234779,  0.78283347],
+        [ 0.50504494, -0.39312103,  1.56072382, ...,  2.01801143,
+         -0.34582501, -0.71471391]]),
+ array([0, 1, 1, ..., 0, 1, 0]))</code></pre>
+</div>
+</div>
+</section>
+<section id="globally-set-configuration" class="level1">
+<h1>Globally set configuration</h1>
+<div id="cell-11" class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sklearn.set_config(array_api_dispatch<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="lineardiscriminantanalysis" class="level1">
+<h1>LinearDiscriminantAnalysis</h1>
+<section id="sklearn-performance-on-cpu" class="level3">
+<h3 class="anchored" data-anchor-id="sklearn-performance-on-cpu">Sklearn Performance on CPU</h3>
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="28b3f184-a7a1-43d3-a49c-b52cab986849">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> time.perf_counter()</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>X_torch_cpu, y_torch_cpu <span class="op">=</span> torch.asarray(X_np), torch.asarray(y_np)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>lda_torch_cpu <span class="op">=</span> LinearDiscriminantAnalysis()</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>lda_torch_cpu.fit(X_torch_cpu, y_torch_cpu)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> lda_torch_cpu.predict(X_torch_cpu)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(predictions.device)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(predictions))</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> time.perf_counter()</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'time taken to run:'</span>,t2<span class="op">-</span>t1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cpu
+&lt;class 'torch.Tensor'&gt;
+time taken to run: 30.194514389999767</code></pre>
+</div>
+</div>
+</section>
+<section id="sklearn-performance-on-gpu" class="level3">
+<h3 class="anchored" data-anchor-id="sklearn-performance-on-gpu">Sklearn Performance on GPU</h3>
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="1063222d-53e0-43a8-b5a2-f61fdeae37a3">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>X_torch_cuda <span class="op">=</span> torch.asarray(X_np, device<span class="op">=</span><span class="st">"cuda"</span>, dtype<span class="op">=</span>torch.float32)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>y_torch_cuda <span class="op">=</span> torch.asarray(y_np, device<span class="op">=</span><span class="st">"cuda"</span>, dtype<span class="op">=</span>torch.float32)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(X_torch_cuda))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(y_torch_cuda))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'torch.Tensor'&gt;
+&lt;class 'torch.Tensor'&gt;</code></pre>
+</div>
+</div>
+<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="86455395-e299-44b1-8a06-b440f0ca9a93">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> time.perf_counter()</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>lda_torch_cuda <span class="op">=</span> LinearDiscriminantAnalysis()</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>lda_torch_cuda.fit(X_torch_cuda, y_torch_cuda)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> lda_torch_cuda.predict(X_torch_cuda)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(predictions.device)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(predictions))</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> time.perf_counter()</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'time taken to run:'</span>,t2<span class="op">-</span>t1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cuda:0
+&lt;class 'torch.Tensor'&gt;
+time taken to run: 0.5633445190001112</code></pre>
+</div>
+</div>
+<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f2bd2bc1-daaa-4695-b586-9e09ce5403ac">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(predictions))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'torch.Tensor'&gt;</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="train-model-on-gpu-and-transfer-to-cpu-for-deployment" class="level1">
+<h1>Train model on GPU and transfer to CPU for deployment</h1>
+<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="d4a7d4e0-c2c9-4e86-b13b-375038188e3c">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.utils._array_api <span class="im">import</span> _estimator_with_converted_arrays</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>tensor_to_ndarray <span class="op">=</span> <span class="kw">lambda</span> array : array.cpu().numpy()</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>lda_np <span class="op">=</span> _estimator_with_converted_arrays(lda_torch_cuda, tensor_to_ndarray)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>X_trans <span class="op">=</span> lda_np.transform(X_np)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(X_np))</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(X_trans))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'numpy.ndarray'&gt;
+&lt;class 'numpy.ndarray'&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="pca-decomposition" class="level1">
+<h1>PCA Decomposition</h1>
+<div id="cell-22" class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>X_np <span class="op">=</span> np.random.rand(<span class="dv">1000000</span>, <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="sklearn-performance-on-cpu-1" class="level3">
+<h3 class="anchored" data-anchor-id="sklearn-performance-on-cpu-1">Sklearn Performance on CPU</h3>
+<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="be06bad3-7aa5-49d9-fc56-457d8caf3d5b">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>X_torch_cpu <span class="op">=</span> torch.asarray(X_np)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> time.perf_counter()</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>pca_cpu <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>, svd_solver<span class="op">=</span><span class="st">'full'</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>pca_cpu.fit(X_torch_cpu)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pca_cpu.explained_variance_ratio_)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pca_cpu.singular_values_)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> time.perf_counter()</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'time taken to run:'</span>,t2<span class="op">-</span>t1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([0.0102, 0.0102], dtype=torch.float64)
+tensor([291.4060, 291.3705], dtype=torch.float64)
+time taken to run: 10.91760363100002</code></pre>
+</div>
+</div>
+</section>
+<section id="sklearn-performance-on-gpu-1" class="level3">
+<h3 class="anchored" data-anchor-id="sklearn-performance-on-gpu-1">Sklearn Performance on GPU</h3>
+<div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="2015ae59-ef8f-459f-da5c-d8949aa1b347">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>X_torch_cuda <span class="op">=</span> torch.asarray(X_np, device<span class="op">=</span><span class="st">"cuda"</span>, dtype<span class="op">=</span>torch.float32)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> time.perf_counter()</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>pca_cuda <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>, svd_solver<span class="op">=</span><span class="st">'full'</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>pca_cuda.fit(X_torch_cuda)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pca_cuda.explained_variance_ratio_)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pca_cuda.singular_values_)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> time.perf_counter()</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'time taken to run:'</span>,t2<span class="op">-</span>t1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([0.0102, 0.0102], device='cuda:0')
+tensor([291.4084, 291.3728], device='cuda:0')
+time taken to run: 0.278887709999708</code></pre>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
