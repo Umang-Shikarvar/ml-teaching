@@ -362,7 +362,7 @@ window.Quarto = {
   <li><a href="#for-a-tree" id="toc-for-a-tree" class="nav-link" data-scroll-target="#for-a-tree">For a tree:</a></li>
   <li><a href="#for-a-forest" id="toc-for-a-forest" class="nav-link" data-scroll-target="#for-a-forest">For a forest:</a></li>
   <li><a href="#aside" id="toc-aside" class="nav-link" data-scroll-target="#aside">Aside:</a></li>
-  <li><a href="#bootstrap-codein-the-random_forest.fit-functionbootstrap_code" id="toc-bootstrap-codein-the-random_forest.fit-functionbootstrap_code" class="nav-link" data-scroll-target="#bootstrap-codein-the-random_forest.fit-functionbootstrap_code">Bootstrap code:in the random_forest.fit() function<img src="../shared/figures/diagrams/ensemble/bootstrap_code.png" class="img-fluid" alt="bootstrap_code"></a></li>
+  <li><a href="#bootstrap-codein-the-random_forest.fit-functionbootstrap_code" id="toc-bootstrap-codein-the-random_forest.fit-functionbootstrap_code" class="nav-link" data-scroll-target="#bootstrap-codein-the-random_forest.fit-functionbootstrap_code">Bootstrap code:in the random_forest.fit() function<img src="../supervised/assets/ensemble/diagrams/bootstrap_code.png" class="img-fluid" alt="bootstrap_code"></a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ensemble-feature-importance.html.ipynb" download="ensemble-feature-importance.html.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -1062,40 +1062,17 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </style><div id="sk-container-id-3" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RandomForestClassifier(criterion='entropy', n_estimators=10, random_state=0)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" checked=""><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;RandomForestClassifier<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>RandomForestClassifier(criterion='entropy', n_estimators=10, random_state=0)</pre></div> </div></div></div></div>
 </div>
 </div>
-<div id="cell-11" class="cell" data-execution_count="17">
+<div id="cell-11" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize ``each tree in the Random Forest</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, tree <span class="kw">in</span> <span class="bu">enumerate</span>(rf.estimators_):</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create DOT data for the i-th tree</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    dot_data <span class="op">=</span> export_graphviz(tree, out_file<span class="op">=</span><span class="va">None</span>, </span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                               feature_names<span class="op">=</span>iris.columns[:<span class="op">-</span><span class="dv">1</span>],  </span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>                               class_names<span class="op">=</span>iris.species.unique(),</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>                               filled<span class="op">=</span><span class="va">True</span>, rounded<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>                               special_characters<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>                               impurity<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>                               node_ids<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use Graphviz to render the DOT data into a graph</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    graph <span class="op">=</span> graphviz.Source(dot_data)</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Save or display the graph (change the format as needed)</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    graph.render(filename<span class="op">=</span><span class="ss">f'../figures/ensemble/feature-imp-</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'pdf'</span>, cleanup<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    graph.render(filename<span class="op">=</span><span class="ss">f'../figures/ensemble/feature-imp-</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>, <span class="bu">format</span><span class="op">=</span><span class="st">'png'</span>, cleanup<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize each tree in the Random Forestfor i, tree in enumerate(rf.estimators_):    # Create DOT data for the i-th tree    dot_data = export_graphviz(tree, out_file=None,                                feature_names=iris.columns[:-1],                                 class_names=iris.species.unique(),                               filled=True, rounded=True,                               special_characters=True,                               impurity=True,                               node_ids=True)        # Use Graphviz to render the DOT data into a graph    graph = graphviz.Source(dot_data)        # Save or display the graph (change the format as needed)    graph.render(filename=f'../supervised/assets/ensemble/figures/feature-imp-{i}', format='pdf', cleanup=True)    graph.render(filename=f'../supervised/assets/ensemble/figures/feature-imp-{i}', format='png', cleanup=True)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-12" class="cell" data-execution_count="18">
+<div id="cell-12" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the treeImage(filename='../shared/figures/ensemble/feature-imp-0.png')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the treeImage(filename='../supervised/assets/ensemble/figures/feature-imp-0.png')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="18">
-<div>
-<figure class="figure">
-<p><img src="ensemble-feature-importance_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
 </div>
 <div id="cell-13" class="cell" data-execution_count="26">
 <details class="code-fold">
@@ -1406,18 +1383,11 @@ sepal_width     0.033960
 dtype: float64</code></pre>
 </div>
 </div>
-<div id="cell-35" class="cell" data-execution_count="15">
+<div id="cell-35" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>ser <span class="op">=</span> pd.Series(sklearn_imp_forest, index<span class="op">=</span>iris.columns[:<span class="op">-</span><span class="dv">1</span>])ser.plot(kind<span class="op">=</span><span class="st">'bar'</span>, rot<span class="op">=</span><span class="dv">0</span>)format_axes(plt.gca())plt.savefig(<span class="st">'../shared/figures/ensemble/feature-imp-forest.pdf'</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>ser <span class="op">=</span> pd.Series(sklearn_imp_forest, index<span class="op">=</span>iris.columns[:<span class="op">-</span><span class="dv">1</span>])ser.plot(kind<span class="op">=</span><span class="st">'bar'</span>, rot<span class="op">=</span><span class="dv">0</span>)format_axes(plt.gca())plt.savefig(<span class="st">'../supervised/assets/ensemble/figures/feature-imp-forest.pdf'</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="ensemble-feature-importance_files/figure-html/cell-35-output-1.png" width="357" height="232" class="figure-img"></p>
-</figure>
-</div>
-</div>
 </div>
 </section>
 <section id="aside" class="level3">
@@ -1435,7 +1405,7 @@ dtype: float64</code></pre>
 <p>if there is no left or right child, it returns -1</p>
 </section>
 <section id="bootstrap-codein-the-random_forest.fit-functionbootstrap_code" class="level3">
-<h3 class="anchored" data-anchor-id="bootstrap-codein-the-random_forest.fit-functionbootstrap_code">Bootstrap code:in the random_forest.fit() function<img src="../shared/figures/diagrams/ensemble/bootstrap_code.png" class="img-fluid" alt="bootstrap_code"></h3>
+<h3 class="anchored" data-anchor-id="bootstrap-codein-the-random_forest.fit-functionbootstrap_code">Bootstrap code:in the random_forest.fit() function<img src="../supervised/assets/ensemble/diagrams/bootstrap_code.png" class="img-fluid" alt="bootstrap_code"></h3>
 
 
 </section>
