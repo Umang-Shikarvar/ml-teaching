@@ -1,0 +1,151 @@
+
+\RequirePackage{amsmath, amssymb, bm}
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{conventions}[2025/07/21 ML notation package]
+
+\makeatletter
+
+% =============================================================================
+% VECTOR NOTATION (bold lowercase)
+% =============================================================================
+
+\providecommand{\vx}{\mathbf{x}}
+\providecommand{\vy}{\mathbf{y}}
+\providecommand{\vw}{\mathbf{w}}
+\providecommand{\vb}{\mathbf{b}}
+\providecommand{\vh}{\mathbf{h}}
+\providecommand{\vz}{\mathbf{z}}
+\providecommand{\vf}{\mathbf{f}}
+\providecommand{\vg}{\mathbf{g}}
+\providecommand{\vu}{\mathbf{u}}
+\providecommand{\vv}{\mathbf{v}}
+\providecommand{\vzero}{\mathbf{0}}
+\providecommand{\vone}{\mathbf{1}}
+
+\providecommand{\vmu}{\boldsymbol{\mu}}
+\providecommand{\vtheta}{\boldsymbol{\theta}}
+\providecommand{\vlambda}{\boldsymbol{\lambda}}
+\providecommand{\valpha}{\boldsymbol{\alpha}}
+\providecommand{\vbeta}{\boldsymbol{\beta}}
+\providecommand{\vxi}{\boldsymbol{\xi}}
+\providecommand{\vepsilon}{\boldsymbol{\epsilon}}
+
+% =============================================================================
+% MATRIX NOTATION (bold uppercase)
+% =============================================================================
+
+\providecommand{\mX}{\mathbf{X}}
+\providecommand{\mY}{\mathbf{Y}}
+\providecommand{\mW}{\mathbf{W}}
+\providecommand{\mA}{\mathbf{A}}
+\providecommand{\mB}{\mathbf{B}}
+\providecommand{\mC}{\mathbf{C}}
+\providecommand{\mH}{\mathbf{H}}
+\providecommand{\mI}{\mathbf{I}}
+\providecommand{\mJ}{\mathbf{J}}
+\providecommand{\mK}{\mathbf{K}}
+\providecommand{\mL}{\mathbf{L}}
+\providecommand{\mP}{\mathbf{P}}
+\providecommand{\mQ}{\mathbf{Q}}
+\providecommand{\mR}{\mathbf{R}}
+\providecommand{\mS}{\mathbf{S}}
+\providecommand{\mU}{\mathbf{U}}
+\providecommand{\mV}{\mathbf{V}}
+
+\providecommand{\mSigma}{\boldsymbol{\Sigma}}
+\providecommand{\mLambda}{\boldsymbol{\Lambda}}
+\providecommand{\mPhi}{\boldsymbol{\Phi}}
+\providecommand{\mPsi}{\boldsymbol{\Psi}}
+\providecommand{\mTheta}{\boldsymbol{\Theta}}
+
+% =============================================================================
+% SETS AND SPACES
+% =============================================================================
+
+\providecommand{\cD}{\mathcal{D}}
+\providecommand{\cH}{\mathcal{H}}
+\providecommand{\cX}{\mathcal{X}}
+\providecommand{\cY}{\mathcal{Y}}
+\providecommand{\cF}{\mathcal{F}}
+\providecommand{\cG}{\mathcal{G}}
+\providecommand{\cL}{\mathcal{L}}
+\providecommand{\cN}{\mathcal{N}}
+\providecommand{\cU}{\mathcal{U}}
+\providecommand{\cB}{\mathcal{B}}
+\providecommand{\cP}{\mathcal{P}}
+
+\providecommand{\Real}{\mathbb{R}}
+\providecommand{\Nat}{\mathbb{N}}
+\providecommand{\Int}{\mathbb{Z}}
+\providecommand{\Complex}{\mathbb{C}}
+
+% =============================================================================
+% OPERATORS AND FUNCTIONS
+% =============================================================================
+
+\providecommand{\yhat}{\hat{\vy}}
+\providecommand{\yhati}{\hat{y}_i}
+
+\providecommand{\sigmoid}{\operatorname{sigmoid}}
+\providecommand{\softmax}{\operatorname{softmax}}
+\providecommand{\ReLU}{\operatorname{ReLU}}
+\providecommand{\sign}{\operatorname{sign}}
+\providecommand{\KL}{\operatorname{KL}}
+\providecommand{\MSE}{\operatorname{MSE}}
+\providecommand{\MAE}{\operatorname{MAE}}
+\providecommand{\RMSE}{\operatorname{RMSE}}
+
+\providecommand{\TP}{\text{TP}}
+\providecommand{\TN}{\text{TN}}
+\providecommand{\FP}{\text{FP}}
+\providecommand{\FN}{\text{FN}}
+\providecommand{\Precision}{\operatorname{Precision}}
+\providecommand{\Recall}{\operatorname{Recall}}
+\providecommand{\Accuracy}{\operatorname{Accuracy}}
+
+\providecommand{\tp}{^\top}
+\providecommand{\inv}{^{-1}}
+\providecommand{\pinv}{^{\dagger}}
+
+\providecommand{\norm}[1]{\|#1\|}
+\providecommand{\normone}[1]{\|#1\|_1}
+\providecommand{\normtwo}[1]{\|#1\|_2}
+\providecommand{\norminf}[1]{\|#1\|_\infty}
+\providecommand{\normF}[1]{\|#1\|_F}
+
+\providecommand{\argmin}{\operatorname*{arg\,min}}
+\providecommand{\argmax}{\operatorname*{arg\,max}}
+\providecommand{\minimize}{\operatorname{minimize}}
+\providecommand{\maximize}{\operatorname{maximize}}
+\providecommand{\subjectto}{\operatorname{subject\,to}}
+
+\providecommand{\tr}{\operatorname{tr}}
+\providecommand{\det}{\operatorname{det}}
+\providecommand{\rank}{\operatorname{rank}}
+\providecommand{\span}{\operatorname{span}}
+\providecommand{\null}{\operatorname{null}}
+\providecommand{\range}{\operatorname{range}}
+\providecommand{\diag}{\operatorname{diag}}
+\providecommand{\vec}{\operatorname{vec}}
+
+\providecommand{\Prob}{\mathbb{P}}
+\providecommand{\Exp}{\mathbb{E}}
+\providecommand{\Var}{\operatorname{Var}}
+\providecommand{\Cov}{\operatorname{Cov}}
+\providecommand{\Corr}{\operatorname{Corr}}
+\providecommand{\MI}{\operatorname{I}}
+
+\providecommand{\Entropy}{\operatorname{Entropy}}
+\providecommand{\Gain}{\operatorname{Gain}}
+
+
+% =============================================================================
+% MISCELLANEOUS
+\providecommand{\RSS}{\operatorname{RSS}}
+
+
+
+\makeatother
+
+\endinput
