@@ -368,7 +368,7 @@
     "href": "index.html#contributing-feedback",
     "title": "ML Resources",
     "section": "Contributing & Feedback",
-    "text": "Contributing & Feedback\nFound an issue or have a suggestion? We welcome contributions from the community!\n\nReport Issues: Create a GitHub issue using our issue template\nView Source: Browse the repository to explore all materials\nContribute: Submit pull requests with improvements or corrections\n\n\nFor questions or feedback, visit Prof. Nipun Batra’s homepage or create an issue"
+    "text": "Contributing & Feedback\nFound an issue or have a suggestion? We welcome contributions from the community!\n\nReport Issues: Use our issue templates at github.com/nipunbatra/ml-teaching/issues/new/choose to report bugs, suggest content improvements, or request new features\nView Source: Browse the repository to explore all materials\nContribute: Submit pull requests with improvements or corrections\n\n\nFor questions or feedback, visit Prof. Nipun Batra’s homepage or create an issue"
   },
   {
     "objectID": "notebooks.html",
