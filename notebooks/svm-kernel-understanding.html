@@ -386,7 +386,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="cell-1" class="cell" data-execution_count="9">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://colab.research.google.com/github/nipunbatra/ml-teaching/blob/master/notebooks/svm-kernel-understanding.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid figure-img"></a></p>
+<figcaption>Open In Colab</figcaption>
+</figure>
+</div>
+<div id="cell-2" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
@@ -409,7 +415,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 </div>
-<div id="cell-2" class="cell" data-execution_count="37">
+<div id="cell-3" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
@@ -418,7 +424,7 @@ Note: you may need to restart the kernel to use updated packages.
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-3" class="cell" data-execution_count="139">
+<div id="cell-4" class="cell" data-execution_count="139">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> linear_kernel(x1, x2):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.dot(x1, x2)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -428,7 +434,7 @@ Note: you may need to restart the kernel to use updated packages.
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gaussian_kernel(x, y, gamma<span class="op">=</span><span class="fl">0.5</span>):</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.exp(<span class="op">-</span>gamma <span class="op">*</span> np.linalg.norm(x<span class="op">-</span>y)<span class="op">**</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-4" class="cell" data-execution_count="127">
+<div id="cell-5" class="cell" data-execution_count="127">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x_test <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x_point <span class="op">=</span> np.array([<span class="fl">1.0</span>])</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -437,7 +443,7 @@ Note: you may need to restart the kernel to use updated packages.
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>K_gaussian_point <span class="op">=</span> np.array([gaussian_kernel(x_point, xi) <span class="cf">for</span> xi <span class="kw">in</span> x_test])</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>K_gaussian_high_gamma_point <span class="op">=</span> np.array([gaussian_kernel(x_point, xi, gamma<span class="op">=</span><span class="fl">2.0</span>) <span class="cf">for</span> xi <span class="kw">in</span> x_test])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="129">
+<div id="cell-6" class="cell" data-execution_count="129">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">4</span>, sharex<span class="op">=</span><span class="va">True</span>, figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].plot(x_test, K_linear_point)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">'Linear kernel'</span>)</span>
@@ -467,14 +473,14 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 </div>
-<div id="cell-6" class="cell" data-execution_count="140">
+<div id="cell-7" class="cell" data-execution_count="140">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>K_lin <span class="op">=</span> np.array([[linear_kernel(xi, xj) <span class="cf">for</span> xi <span class="kw">in</span> x] <span class="cf">for</span> xj <span class="kw">in</span> x])</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>K_poly <span class="op">=</span> np.array([[polynomial_kernel(xi, xj) <span class="cf">for</span> xi <span class="kw">in</span> x] <span class="cf">for</span> xj <span class="kw">in</span> x])</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>K_gauss <span class="op">=</span> np.array([[gaussian_kernel(xi, xj) <span class="cf">for</span> xi <span class="kw">in</span> x] <span class="cf">for</span> xj <span class="kw">in</span> x])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-7" class="cell" data-execution_count="141">
+<div id="cell-8" class="cell" data-execution_count="141">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>trace_lin <span class="op">=</span> go.Heatmap(z<span class="op">=</span>K_lin, x<span class="op">=</span>x, y<span class="op">=</span>x, colorscale<span class="op">=</span><span class="st">'Viridis'</span>, name<span class="op">=</span><span class="st">'Linear Kernel'</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[trace_lin])</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fig.update_layout(title<span class="op">=</span><span class="st">'Linear Kernel'</span>, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">500</span>)</span>
@@ -483,7 +489,7 @@ Note: you may need to restart the kernel to use updated packages.
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
-<div id="cell-8" class="cell" data-execution_count="24">
+<div id="cell-9" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>trace_rbf <span class="op">=</span> go.Heatmap(z<span class="op">=</span>K_gauss, x<span class="op">=</span>x, y<span class="op">=</span>x, colorscale<span class="op">=</span><span class="st">'Viridis'</span>, name<span class="op">=</span><span class="st">'Gaussian Kernel'</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[trace_rbf])</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fig.update_layout(title<span class="op">=</span><span class="st">'Gaussian Kernel'</span>, width<span class="op">=</span><span class="dv">500</span>, height<span class="op">=</span><span class="dv">500</span>)</span>
@@ -492,7 +498,7 @@ Note: you may need to restart the kernel to use updated packages.
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
-<div id="cell-9" class="cell" data-execution_count="142">
+<div id="cell-10" class="cell" data-execution_count="142">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot 1 row 3 cols for various value of gamma in Gaussian kernel using plotly</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>gammas <span class="op">=</span> [<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="dv">5</span>]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -510,7 +516,7 @@ Note: you may need to restart the kernel to use updated packages.
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
-<div id="cell-10" class="cell" data-execution_count="143">
+<div id="cell-11" class="cell" data-execution_count="143">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Understanding how the "similarity" from support vectors to the test point is calculated</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_blobs</span>
@@ -935,14 +941,14 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </div>
-<div id="cell-11" class="cell" data-execution_count="144">
+<div id="cell-12" class="cell" data-execution_count="144">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>clf.support_vectors_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="144">
 <pre><code>array([[ 7.27059007, -4.84225716],
        [ 6.49868019, -7.13530714]])</code></pre>
 </div>
 </div>
-<div id="cell-12" class="cell" data-execution_count="145">
+<div id="cell-13" class="cell" data-execution_count="145">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], c<span class="op">=</span>y, s<span class="op">=</span><span class="dv">30</span>, cmap<span class="op">=</span>plt.cm.Paired)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># plot scatter with black edge color for support vectors</span></span>
@@ -978,13 +984,13 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </div>
-<div id="cell-13" class="cell" data-execution_count="137">
+<div id="cell-14" class="cell" data-execution_count="137">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>clf.dual_coef_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="137">
 <pre><code>array([[-0.341651,  0.341651]])</code></pre>
 </div>
 </div>
-<div id="cell-14" class="cell" data-execution_count="138">
+<div id="cell-15" class="cell" data-execution_count="138">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>test_point <span class="op">=</span> np.array([[<span class="fl">7.0</span>, <span class="op">-</span><span class="fl">8.0</span>]])</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>decision_function_test(clf, test_point)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1010,7 +1016,7 @@ Decision function: [1.54520958] = 4.42131609452688 + [-2.87610651]</code></pre>
 <pre><code>array([1.54520958])</code></pre>
 </div>
 </div>
-<div id="cell-15" class="cell" data-execution_count="124">
+<div id="cell-16" class="cell" data-execution_count="124">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>clf.decision_function(test_point)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="124">
 <pre><code>array([1.54520958])</code></pre>

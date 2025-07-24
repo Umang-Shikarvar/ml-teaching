@@ -384,7 +384,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="cell-1" class="cell" data-execution_count="3">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://colab.research.google.com/github/nipunbatra/ml-teaching/blob/master/notebooks/hyperparams-experiments.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid figure-img"></a></p>
+<figcaption>Open In Colab</figcaption>
+</figure>
+</div>
+<div id="cell-2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">20</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -396,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>MakeMoons Dataset</p>
 <p>1.1 Fixed Train-Test (70:30) split ; No Tuning</p>
-<div id="cell-4" class="cell" data-execution_count="19">
+<div id="cell-5" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
@@ -408,7 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into training, validation, and test sets</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="20">
+<div id="cell-6" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>latexify(fig_width<span class="op">=</span><span class="dv">5</span>, fig_height<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_train[:, <span class="dv">0</span>], X_train[:, <span class="dv">1</span>], c<span class="op">=</span>y_train, label<span class="op">=</span><span class="st">'Train'</span>) </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_test[:, <span class="dv">0</span>], X_test[:, <span class="dv">1</span>], c<span class="op">=</span>y_test, marker<span class="op">=</span><span class="st">'x'</span>, label<span class="op">=</span><span class="st">'Test'</span>)</span>
@@ -422,13 +428,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-6" class="cell" data-execution_count="21">
+<div id="cell-7" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(X_train), <span class="bu">len</span>(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>(700, 300)</code></pre>
 </div>
 </div>
-<div id="cell-7" class="cell" data-execution_count="22">
+<div id="cell-8" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#hyperparameters take their default values</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dt_classifier <span class="op">=</span> DecisionTreeClassifier(random_state<span class="op">=</span><span class="dv">42</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>dt_classifier.fit(X_train, y_train)</span>
@@ -441,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>1.2 Multiple Random Train-Test splits</p>
-<div id="cell-9" class="cell" data-execution_count="29">
+<div id="cell-10" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize an empty list to store the accuracy metrics</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>accuracy_metrics <span class="op">=</span> []</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>all_test_sets <span class="op">=</span> []</span>
@@ -487,7 +493,7 @@ Minimum accuracy: 0.8400
 Maximum accuracy: 0.9133</code></pre>
 </div>
 </div>
-<div id="cell-10" class="cell" data-execution_count="30">
+<div id="cell-11" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find number of unique element in X_tests</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>found_unique_test_samples <span class="op">=</span> <span class="bu">len</span>(np.unique(np.concatenate(X_tests), axis<span class="op">=</span><span class="dv">0</span>))</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of unique test samples: </span><span class="sc">{</span>found_unique_test_samples<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -498,7 +504,7 @@ Ideally we wanted 1000 unique test samples</code></pre>
 </div>
 </div>
 <p>1.3 K-Fold Cross Validation</p>
-<div id="cell-12" class="cell" data-execution_count="37">
+<div id="cell-13" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the number of folds (k)</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">5</span></span>
@@ -552,7 +558,7 @@ Fold 4: Accuracy: 0.8650
 Fold 5: Accuracy: 0.8850</code></pre>
 </div>
 </div>
-<div id="cell-13" class="cell" data-execution_count="38">
+<div id="cell-14" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cgi <span class="im">import</span> test</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> KFold</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -604,7 +610,7 @@ Fold 5: Accuracy: 0.8850</code></pre>
 </div>
 <section id="micro-and-macro-averaging" class="level5">
 <h5 class="anchored" data-anchor-id="micro-and-macro-averaging">Micro and Macro Averaging</h5>
-<div id="cell-15" class="cell" data-execution_count="54">
+<div id="cell-16" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Method 1 for computing accuracy</span></span>
@@ -623,18 +629,18 @@ Method2 accuracy: 0.8870</code></pre>
 </div>
 <p>2.1 Fixed Train-Test Split (hyperparameters tuned on Validation set)</p>
 <p>2.1.1 Validation Set as fixed Subset of Training Set</p>
-<div id="cell-18" class="cell" data-execution_count="42">
+<div id="cell-19" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>1000</code></pre>
 </div>
 </div>
-<div id="cell-19" class="cell" data-execution_count="43">
+<div id="cell-20" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Split the data into training, validation, and test sets</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>X_train_val, X_test, y_train_val, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>X_train, X_val, y_train, y_val <span class="op">=</span> train_test_split(X_train_val, y_train_val, test_size<span class="op">=</span><span class="fl">0.285</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-20" class="cell" data-execution_count="41">
+<div id="cell-21" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of training examples: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="bu">len</span>(X_train)))</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of validation examples: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="bu">len</span>(X_val)))</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of testing examples: </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="bu">len</span>(X_test)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -644,7 +650,7 @@ Number of validation examples: 200
 Number of testing examples: 300</code></pre>
 </div>
 </div>
-<div id="cell-21" class="cell" data-execution_count="45">
+<div id="cell-22" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>hyperparameters <span class="op">=</span> {}</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>hyperparameters[<span class="st">'max_depth'</span>] <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>]</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>hyperparameters[<span class="st">'min_samples_split'</span>] <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>]</span>
@@ -667,7 +673,7 @@ Number of testing examples: 300</code></pre>
 <span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>            out[count] <span class="op">=</span> {<span class="st">'max_depth'</span>: max_depth, <span class="st">'min_samples_split'</span>: min_samples_split, <span class="st">'criterion'</span>: criterion, <span class="st">'val_accuracy'</span>: val_accuracy}</span>
 <span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>            count <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-22" class="cell" data-execution_count="46">
+<div id="cell-23" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>hparam_df <span class="op">=</span> pd.DataFrame(out).T</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>hparam_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="46">
@@ -769,7 +775,7 @@ Number of testing examples: 300</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-23" class="cell" data-execution_count="47">
+<div id="cell-24" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>hparam_df.sort_values(by<span class="op">=</span><span class="st">'val_accuracy'</span>, ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="47">
 <div>
@@ -862,22 +868,22 @@ Number of testing examples: 300</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-24" class="cell" data-execution_count="48">
+<div id="cell-25" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure dtype of val_accuracy is float</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>hparam_df[<span class="st">'val_accuracy'</span>] <span class="op">=</span> hparam_df[<span class="st">'val_accuracy'</span>].astype(<span class="bu">float</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-25" class="cell" data-execution_count="49">
+<div id="cell-26" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>best_hyperparameters_row <span class="op">=</span> hparam_df.iloc[hparam_df[<span class="st">'val_accuracy'</span>].idxmax()]</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>best_accuracy <span class="op">=</span> best_hyperparameters_row[<span class="st">'val_accuracy'</span>]</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>best_hyperparameters <span class="op">=</span> best_hyperparameters_row[[<span class="st">'max_depth'</span>, <span class="st">'min_samples_split'</span>, <span class="st">'criterion'</span>]].to_dict()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-26" class="cell" data-execution_count="50">
+<div id="cell-27" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>best_hyperparameters</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="50">
 <pre><code>{'max_depth': 6, 'min_samples_split': 5, 'criterion': 'gini'}</code></pre>
 </div>
 </div>
-<div id="cell-27" class="cell" data-execution_count="51">
+<div id="cell-28" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the performance of the selected hyperparameter combination on the test set</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>dt_classifier <span class="op">=</span> DecisionTreeClassifier(max_depth<span class="op">=</span>best_hyperparameters[<span class="st">'max_depth'</span>], </span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>                                       min_samples_split<span class="op">=</span>best_hyperparameters[<span class="st">'min_samples_split'</span>], </span>
@@ -907,7 +913,7 @@ Test Set accuracy: 0.9067</code></pre>
 <span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>            val_accuracy <span class="op">=</span> dt_classifier.score(X_val, y_val)</span>
 <span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>            out[count] <span class="op">=</span> {<span class="st">'max_depth'</span>: max_depth, <span class="st">'min_samples_split'</span>: min_samples_split, <span class="st">'criterion'</span>: criterion, <span class="st">'val_accuracy'</span>: val_accuracy}</span>
 <span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>            count <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-29" class="cell" data-execution_count="52">
+<div id="cell-30" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itertools <span class="im">import</span> product</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> max_depth, min_samples_split, criterion <span class="kw">in</span> product(hyperparameters[<span class="st">'max_depth'</span>], hyperparameters[<span class="st">'min_samples_split'</span>], hyperparameters[<span class="st">'criteria_values'</span>]):</span>
@@ -921,7 +927,7 @@ Test Set accuracy: 0.9067</code></pre>
 <span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    dt_classifier.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>2.1.2 Multiple random subsets of Training Set used as Validation Set</p>
-<div id="cell-31" class="cell" data-execution_count="35">
+<div id="cell-32" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a list to store the optimal hyperparameters for each validation set</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>optimal_hyperparameters <span class="op">=</span> {}</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>test_accuracies <span class="op">=</span> []</span>
@@ -994,7 +1000,7 @@ Optimal hyperparameters for validation set 5: {'max_depth': 6, 'min_samples_spli
 Test Accuracy for validation set 5: 0.9233</code></pre>
 </div>
 </div>
-<div id="cell-32" class="cell" data-execution_count="36">
+<div id="cell-33" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>hyperparameters_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <div>
@@ -1107,7 +1113,7 @@ Test Accuracy for validation set 5: 0.9233</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-33" class="cell" data-execution_count="37">
+<div id="cell-34" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>grouped_df <span class="op">=</span> hyperparameters_df.groupby([<span class="st">'max_depth'</span>, <span class="st">'min_samples_split'</span>, <span class="st">'criterion'</span>]).mean()[<span class="st">'validation accuracy'</span>]</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>grouped_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
@@ -1126,7 +1132,7 @@ Test Accuracy for validation set 5: 0.9233</code></pre>
 Name: validation accuracy, Length: 140, dtype: float64</code></pre>
 </div>
 </div>
-<div id="cell-34" class="cell" data-execution_count="38">
+<div id="cell-35" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>grouped_df.sort_values(ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>max_depth  min_samples_split  criterion
@@ -1143,14 +1149,14 @@ Name: validation accuracy, Length: 140, dtype: float64</code></pre>
 Name: validation accuracy, dtype: float64</code></pre>
 </div>
 </div>
-<div id="cell-35" class="cell" data-execution_count="39">
+<div id="cell-36" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>optimal_hyperparams <span class="op">=</span> grouped_df.idxmax()</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>optimal_hyperparams</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>(6, 7, 'entropy')</code></pre>
 </div>
 </div>
-<div id="cell-36" class="cell" data-execution_count="40">
+<div id="cell-37" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>df_classifier <span class="op">=</span> DecisionTreeClassifier(max_depth<span class="op">=</span>optimal_hyperparams[<span class="dv">0</span>], min_samples_split<span class="op">=</span>optimal_hyperparams[<span class="dv">1</span>], criterion<span class="op">=</span>optimal_hyperparams[<span class="dv">2</span>], random_state<span class="op">=</span><span class="dv">42</span>)</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>df_classifier.fit(X_train_val, y_train_val)</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>test_accuracy <span class="op">=</span> df_classifier.score(X_test, y_test)</span>
@@ -1160,12 +1166,12 @@ Name: validation accuracy, dtype: float64</code></pre>
 </div>
 </div>
 <p>2.2 Nested Cross-Validation</p>
-<div id="cell-38" class="cell" data-execution_count="70">
+<div id="cell-39" class="cell" data-execution_count="70">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>hyperparameters[<span class="st">'max_depth'</span>] <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>]</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>hyperparameters[<span class="st">'min_samples_split'</span>] <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>]</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>hyperparameters[<span class="st">'criteria_values'</span>] <span class="op">=</span> [<span class="st">'gini'</span>, <span class="st">'entropy'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-39" class="cell" data-execution_count="55">
+<div id="cell-40" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>num_outer_folds <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>num_inner_folds <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1275,10 +1281,10 @@ Outer Fold 5, Inner Fold 4
 Outer Fold 5, Inner Fold 5</code></pre>
 </div>
 </div>
-<div id="cell-40" class="cell" data-execution_count="56">
+<div id="cell-41" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>overall_results <span class="op">=</span> pd.DataFrame(results).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-41" class="cell" data-execution_count="57">
+<div id="cell-42" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>overall_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="57">
 <div>
@@ -1404,7 +1410,7 @@ Outer Fold 5, Inner Fold 5</code></pre>
 </div>
 </div>
 <p>Find the best hyperparameters for each outer fold</p>
-<div id="cell-43" class="cell" data-execution_count="58">
+<div id="cell-44" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>outer_fold <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>outer_fold_df <span class="op">=</span> overall_results.query(<span class="st">'outer_fold == @outer_fold'</span>)</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>outer_fold_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1532,7 +1538,7 @@ Outer Fold 5, Inner Fold 5</code></pre>
 </div>
 </div>
 <p>Aggregate the validation accuracies for each hyperparameter combination across all inner folds</p>
-<div id="cell-45" class="cell" data-execution_count="59">
+<div id="cell-46" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>outer_fold_df.groupby([<span class="st">'max_depth'</span>, <span class="st">'min_samples_split'</span>, <span class="st">'criterion'</span>]).mean()[<span class="st">'val_accuracy'</span>].sort_values(ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
 <pre><code>max_depth  min_samples_split  criterion

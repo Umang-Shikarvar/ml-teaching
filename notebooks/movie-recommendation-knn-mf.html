@@ -387,7 +387,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="cell-1" class="cell" data-execution_count="75">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://colab.research.google.com/github/nipunbatra/ml-teaching/blob/master/notebooks/movie-recommendation-knn-mf.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid figure-img"></a></p>
+<figcaption>Open In Colab</figcaption>
+</figure>
+</div>
+<div id="cell-2" class="cell" data-execution_count="75">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -396,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-2" class="cell" data-execution_count="76">
+<div id="cell-3" class="cell" data-execution_count="76">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now working with real data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
@@ -582,7 +588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-3" class="cell" data-execution_count="77">
+<div id="cell-4" class="cell" data-execution_count="77">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Discard the timestamp column</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'Timestamp'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
@@ -775,7 +781,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-4" class="cell" data-execution_count="78">
+<div id="cell-5" class="cell" data-execution_count="78">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="78">
 <pre><code>Index(['P.Sai Keerthana ', 'Pradeep ', 'Uday Sankar Gottipalli',
@@ -805,7 +811,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       dtype='object', name='Your name')</code></pre>
 </div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="79">
+<div id="cell-6" class="cell" data-execution_count="79">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get index for user and movie</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>user <span class="op">=</span> <span class="st">'Ayush Shrivastava'</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -831,7 +837,7 @@ Uri: The Surgical Strike    4.0
 Name: Ayush Shrivastava, dtype: float64</code></pre>
 </div>
 </div>
-<div id="cell-6" class="cell" data-execution_count="80">
+<div id="cell-7" class="cell" data-execution_count="80">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of missing values</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="80">
@@ -848,7 +854,7 @@ Uri: The Surgical Strike    12
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="cell-7" class="cell" data-execution_count="81">
+<div id="cell-8" class="cell" data-execution_count="81">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generic Matrix Factorization (without missing values)</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
@@ -884,14 +890,14 @@ dtype: int64</code></pre>
         [4., 4., 2., 1., 2., 3., 4., 1., 4., 4.]])</code></pre>
 </div>
 </div>
-<div id="cell-8" class="cell" data-execution_count="82">
+<div id="cell-9" class="cell" data-execution_count="82">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>A.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="82">
 <pre><code>torch.Size([20, 10])</code></pre>
 </div>
 </div>
 <p>Let us decompose A as WH. W is of shape (n, k) and H is of shape (k, n). We can write the above equation as: A = WH</p>
-<div id="cell-10" class="cell" data-execution_count="93">
+<div id="cell-11" class="cell" data-execution_count="93">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Randomly initialize A and B</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set device to cuda:0 if available and on Linux</span></span>
@@ -918,7 +924,7 @@ dtype: int64</code></pre>
 tensor(50.2602, device='mps:0')</code></pre>
 </div>
 </div>
-<div id="cell-11" class="cell" data-execution_count="99">
+<div id="cell-12" class="cell" data-execution_count="99">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    temp_pred <span class="op">=</span> torch.mm(W, H)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    bw_0_1 <span class="op">=</span> torch.nn.Sigmoid()(temp_pred)</span>
@@ -932,7 +938,7 @@ tensor(0.9860, device='mps:0') tensor(0.0020, device='mps:0')
 tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
-<div id="cell-12" class="cell" data-execution_count="84">
+<div id="cell-13" class="cell" data-execution_count="84">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(torch.mm(W, H).cpu().detach().numpy()).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="84">
 <div>
@@ -1026,7 +1032,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-13" class="cell" data-execution_count="16">
+<div id="cell-14" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(A.cpu().detach().numpy()).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
@@ -1120,7 +1126,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-14" class="cell" data-execution_count="85">
+<div id="cell-15" class="cell" data-execution_count="85">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Optimizer</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> optim.Adam([W, H], lr<span class="op">=</span><span class="fl">0.01</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1205,7 +1211,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 590 14.542439460754395</code></pre>
 </div>
 </div>
-<div id="cell-15" class="cell" data-execution_count="86">
+<div id="cell-16" class="cell" data-execution_count="86">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(torch.mm(W, H).cpu().detach().numpy()).head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="86">
 <div>
@@ -1260,7 +1266,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-16" class="cell" data-execution_count="90">
+<div id="cell-17" class="cell" data-execution_count="90">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    pred <span class="op">=</span> torch.mm(W, H)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1307,13 +1313,13 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
          2.5856]], device='mps:0')</code></pre>
 </div>
 </div>
-<div id="cell-17" class="cell" data-execution_count="92">
+<div id="cell-18" class="cell" data-execution_count="92">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>pred.<span class="bu">max</span>(), pred.<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="92">
 <pre><code>(tensor(5.8259, device='mps:0'), tensor(0.3696, device='mps:0'))</code></pre>
 </div>
 </div>
-<div id="cell-18" class="cell" data-execution_count="87">
+<div id="cell-19" class="cell" data-execution_count="87">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(A.cpu()).head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="87">
 <div>
@@ -1368,7 +1374,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-19" class="cell" data-execution_count="100">
+<div id="cell-20" class="cell" data-execution_count="100">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> factorize(A, k, device<span class="op">=</span>torch.device(<span class="st">"cpu"</span>)):</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Factorize the matrix A into W and H</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">    A: input matrix of size (n_users, n_movies)</span></span>
@@ -1402,7 +1408,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> W, H, loss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-20" class="cell" data-execution_count="101">
+<div id="cell-21" class="cell" data-execution_count="101">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">9</span>]:</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    W, H, loss <span class="op">=</span> factorize(A, k, device<span class="op">=</span>device)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k, loss.item())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1416,7 +1422,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 9 3.077495813369751</code></pre>
 </div>
 </div>
-<div id="cell-21" class="cell" data-execution_count="102">
+<div id="cell-22" class="cell" data-execution_count="102">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(torch.mm(W,H).cpu().detach().numpy()).head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="102">
 <div>
@@ -1471,7 +1477,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-22" class="cell" data-execution_count="103">
+<div id="cell-23" class="cell" data-execution_count="103">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(A.cpu()).head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="103">
 <div>
@@ -1526,7 +1532,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-23" class="cell" data-execution_count="68">
+<div id="cell-24" class="cell" data-execution_count="68">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>x_uniform2d <span class="op">=</span> torch.rand(<span class="dv">1000</span>, <span class="dv">2</span>)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># satter plot</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(x_uniform2d[:, <span class="dv">0</span>], x_uniform2d[:, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1538,7 +1544,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-24" class="cell" data-execution_count="69">
+<div id="cell-25" class="cell" data-execution_count="69">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check values of x_uniform2d &lt; 0.5 and color them red</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> x_uniform2d <span class="op">&lt;</span> <span class="fl">0.5</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mask)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1552,7 +1558,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
         [False,  True]])</code></pre>
 </div>
 </div>
-<div id="cell-25" class="cell" data-execution_count="115">
+<div id="cell-26" class="cell" data-execution_count="115">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># With missing values</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Randomly replace some entries with NaN</span></span>
@@ -1583,7 +1589,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
         [2., 1., nan, nan, nan, nan, nan, nan, nan, 5.]])</code></pre>
 </div>
 </div>
-<div id="cell-26" class="cell" data-execution_count="116">
+<div id="cell-27" class="cell" data-execution_count="116">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>W, H, loss <span class="op">=</span> factorize(A, <span class="dv">2</span>, device<span class="op">=</span>device)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>loss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="116">
@@ -1591,13 +1597,13 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 <p>As expected, the above function does not work. Our current loss function does not handle missing values.</p>
-<div id="cell-28" class="cell" data-execution_count="117">
+<div id="cell-29" class="cell" data-execution_count="117">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>A.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="117">
 <pre><code>torch.Size([20, 10])</code></pre>
 </div>
 </div>
-<div id="cell-29" class="cell" data-execution_count="118">
+<div id="cell-30" class="cell" data-execution_count="118">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> <span class="op">~</span>torch.isnan(A)</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>mask</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="118">
@@ -1623,13 +1629,13 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
         [ True,  True, False, False, False, False, False, False, False,  True]])</code></pre>
 </div>
 </div>
-<div id="cell-30" class="cell" data-execution_count="119">
+<div id="cell-31" class="cell" data-execution_count="119">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>mask.<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="119">
 <pre><code>tensor(87)</code></pre>
 </div>
 </div>
-<div id="cell-31" class="cell" data-execution_count="120">
+<div id="cell-32" class="cell" data-execution_count="120">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>W <span class="op">=</span> torch.randn(A.shape[<span class="dv">0</span>], k, requires_grad<span class="op">=</span><span class="va">True</span>, device<span class="op">=</span>device)</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>H <span class="op">=</span> torch.randn(k, A.shape[<span class="dv">1</span>],  requires_grad<span class="op">=</span><span class="va">True</span>, device<span class="op">=</span>device)</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1639,7 +1645,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <pre><code>torch.Size([20, 10])</code></pre>
 </div>
 </div>
-<div id="cell-32" class="cell" data-execution_count="121">
+<div id="cell-33" class="cell" data-execution_count="121">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>diff_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="121">
 <pre><code>tensor([[-6.9854,     nan,     nan,     nan,  2.5382,     nan,     nan,     nan,
@@ -1684,14 +1690,14 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
              nan, -4.0199]], device='mps:0', grad_fn=&lt;SubBackward0&gt;)</code></pre>
 </div>
 </div>
-<div id="cell-33" class="cell" data-execution_count="122">
+<div id="cell-34" class="cell" data-execution_count="122">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mask the matrix</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>diff_matrix[mask].shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="122">
 <pre><code>torch.Size([87])</code></pre>
 </div>
 </div>
-<div id="cell-34" class="cell" data-execution_count="123">
+<div id="cell-35" class="cell" data-execution_count="123">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>diff_matrix[mask]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="123">
 <pre><code>tensor([-6.9854,  2.5382, -3.3296, -4.0131, -6.2010, -3.9650, -6.5180,  0.9829,
@@ -1708,7 +1714,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
        device='mps:0', grad_fn=&lt;IndexBackward0&gt;)</code></pre>
 </div>
 </div>
-<div id="cell-35" class="cell" data-execution_count="161">
+<div id="cell-36" class="cell" data-execution_count="161">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify the loss function to ignore NaN values</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> factorize(A, k, device<span class="op">=</span>torch.device(<span class="st">"cpu"</span>)):</span>
@@ -1739,14 +1745,14 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <span id="cb55-28"><a href="#cb55-28" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb55-29"><a href="#cb55-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> W, H, loss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-36" class="cell" data-execution_count="138">
+<div id="cell-37" class="cell" data-execution_count="138">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>W, H, loss <span class="op">=</span> factorize(A, <span class="dv">5</span>, device<span class="op">=</span>device)</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>loss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="138">
 <pre><code>tensor(8.0831, device='mps:0', grad_fn=&lt;NormBackward1&gt;)</code></pre>
 </div>
 </div>
-<div id="cell-37" class="cell" data-execution_count="139">
+<div id="cell-38" class="cell" data-execution_count="139">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>torch.mm(W, H)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="139">
 <pre><code>tensor([[ 3.7077e-01,  6.6310e+00,  1.5317e+01,  1.5463e+00,  2.3812e+00,
@@ -1918,13 +1924,13 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
        device='mps:0', grad_fn=&lt;MmBackward0&gt;)</code></pre>
 </div>
 </div>
-<div id="cell-38" class="cell" data-execution_count="140">
+<div id="cell-39" class="cell" data-execution_count="140">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>df.values.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="140">
 <pre><code>(83, 10)</code></pre>
 </div>
 </div>
-<div id="cell-39" class="cell" data-execution_count="141">
+<div id="cell-40" class="cell" data-execution_count="141">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> torch.tensor(df.values, dtype<span class="op">=</span>torch.<span class="bu">float</span>)</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>W, H, loss <span class="op">=</span> factorize(A, <span class="dv">3</span>, device<span class="op">=</span>device)</span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(loss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1932,7 +1938,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <pre><code>tensor(13.0500, device='mps:0', grad_fn=&lt;NormBackward1&gt;)</code></pre>
 </div>
 </div>
-<div id="cell-40" class="cell" data-execution_count="145">
+<div id="cell-41" class="cell" data-execution_count="145">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dropdown menu for user and predict for all movies</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact, widgets</span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1949,7 +1955,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>    predicted_ratings <span class="op">=</span> <span class="dv">5</span><span class="op">*</span>torch.nn.Sigmoid()(torch.mm(W, H)).cpu().detach().numpy()</span>
 <span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame({<span class="st">"Observed"</span>: user_ratings.flatten(), <span class="st">"Predicted"</span>: predicted_ratings[idx].flatten()}, index<span class="op">=</span>df.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-41" class="cell" data-execution_count="146">
+<div id="cell-42" class="cell" data-execution_count="146">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>predict_movie_ratings(<span class="st">'Ayush Shrivastava'</span>, df, W, H)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="146">
 <div>
@@ -2020,7 +2026,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-42" class="cell" data-execution_count="147">
+<div id="cell-43" class="cell" data-execution_count="147">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>interact(predict_movie_ratings, user<span class="op">=</span>widgets.Dropdown(options<span class="op">=</span>df.index, value<span class="op">=</span>df.index[<span class="dv">0</span>], description<span class="op">=</span><span class="st">'User'</span>), df<span class="op">=</span>widgets.fixed(df), W<span class="op">=</span>widgets.fixed(W), H<span class="op">=</span>widgets.fixed(H))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
@@ -2031,7 +2037,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <pre><code>&lt;function __main__.predict_movie_ratings(user, df, W, H)&gt;</code></pre>
 </div>
 </div>
-<div id="cell-43" class="cell" data-execution_count="148">
+<div id="cell-44" class="cell" data-execution_count="148">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Image completion</span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> os.path.exists(<span class="st">'dog.jpg'</span>):</span>
@@ -2042,7 +2048,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <pre><code>dog.jpg exists</code></pre>
 </div>
 </div>
-<div id="cell-44" class="cell" data-execution_count="149">
+<div id="cell-45" class="cell" data-execution_count="149">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in a image from torchvision</span></span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torchvision</span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> torchvision.io.read_image(<span class="st">"dog.jpg"</span>)</span>
@@ -2051,7 +2057,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <pre><code>torch.Size([3, 1365, 2048])</code></pre>
 </div>
 </div>
-<div id="cell-45" class="cell" data-execution_count="150">
+<div id="cell-46" class="cell" data-execution_count="150">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make grayscale</span></span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> torch.tensor(img, dtype<span class="op">=</span>torch.<span class="bu">float</span>)</span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> img.mean(dim<span class="op">=</span><span class="dv">0</span>, keepdim<span class="op">=</span><span class="va">False</span>)</span>
@@ -2060,13 +2066,13 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <pre><code>torch.Size([1365, 2048])</code></pre>
 </div>
 </div>
-<div id="cell-46" class="cell" data-execution_count="151">
+<div id="cell-47" class="cell" data-execution_count="151">
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>img.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="151">
 <pre><code>torch.Size([1365, 2048])</code></pre>
 </div>
 </div>
-<div id="cell-47" class="cell" data-execution_count="152">
+<div id="cell-48" class="cell" data-execution_count="152">
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(img, cmap<span class="op">=</span><span class="st">'gray'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -2076,14 +2082,14 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-48" class="cell" data-execution_count="153">
+<div id="cell-49" class="cell" data-execution_count="153">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>crop <span class="op">=</span> torchvision.transforms.functional.crop(img, <span class="dv">600</span>, <span class="dv">800</span>, <span class="dv">300</span>, <span class="dv">300</span>)</span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>crop.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="153">
 <pre><code>torch.Size([300, 300])</code></pre>
 </div>
 </div>
-<div id="cell-49" class="cell" data-execution_count="56">
+<div id="cell-50" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(crop, cmap<span class="op">=</span><span class="st">'gray'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -2093,7 +2099,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-50" class="cell" data-execution_count="154">
+<div id="cell-51" class="cell" data-execution_count="154">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mask the image with NaN values </span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mask_image(img, prop):</span>
 <span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>    img_copy <span class="op">=</span> img.clone()</span>
@@ -2101,16 +2107,16 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>    img_copy[mask] <span class="op">=</span> <span class="bu">float</span>(<span class="st">'nan'</span>)</span>
 <span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> img_copy, mask</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-51" class="cell" data-execution_count="155">
+<div id="cell-52" class="cell" data-execution_count="155">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>masked_img <span class="op">=</span> mask_image(crop, <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-52" class="cell" data-execution_count="156">
+<div id="cell-53" class="cell" data-execution_count="156">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>masked_img[<span class="dv">1</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="156">
 <pre><code>tensor(26858)</code></pre>
 </div>
 </div>
-<div id="cell-53" class="cell" data-execution_count="157">
+<div id="cell-54" class="cell" data-execution_count="157">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(masked_img[<span class="dv">0</span>], cmap<span class="op">=</span><span class="st">'gray'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -2120,16 +2126,16 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-54" class="cell" data-execution_count="162">
+<div id="cell-55" class="cell" data-execution_count="162">
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>W, H, loss <span class="op">=</span> factorize(masked_img[<span class="dv">0</span>], <span class="dv">50</span>, device<span class="op">=</span>device)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-55" class="cell" data-execution_count="163">
+<div id="cell-56" class="cell" data-execution_count="163">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>loss</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="163">
 <pre><code>tensor(1303.8575, device='mps:0', grad_fn=&lt;NormBackward1&gt;)</code></pre>
 </div>
 </div>
-<div id="cell-56" class="cell" data-execution_count="164">
+<div id="cell-57" class="cell" data-execution_count="164">
 <div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(torch.mm(W, H).cpu().detach().numpy(), cmap<span class="op">=</span><span class="st">'gray'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -2139,7 +2145,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-57" class="cell" data-execution_count="165">
+<div id="cell-58" class="cell" data-execution_count="165">
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_image_completion(prop<span class="op">=</span><span class="fl">0.1</span>, factors<span class="op">=</span><span class="dv">50</span>):</span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>    masked_img, mask <span class="op">=</span> mask_image(crop, prop)</span>
 <span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>    W, H, loss <span class="op">=</span> factorize(masked_img, factors, device<span class="op">=</span>device)</span>
@@ -2150,7 +2156,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].imshow(reconstructed_img, cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
 <span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">1</span>].set_title(<span class="st">"Reconstructed image"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-58" class="cell" data-execution_count="166">
+<div id="cell-59" class="cell" data-execution_count="166">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>interact(plot_image_completion, prop<span class="op">=</span>widgets.FloatSlider(<span class="bu">min</span><span class="op">=</span><span class="fl">0.01</span>, <span class="bu">max</span><span class="op">=</span><span class="fl">0.9</span>, step<span class="op">=</span><span class="fl">0.01</span>, value<span class="op">=</span><span class="fl">0.3</span>), factors<span class="op">=</span>widgets.IntSlider(<span class="bu">min</span><span class="op">=</span><span class="dv">1</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">150</span>, step<span class="op">=</span><span class="dv">1</span>, value<span class="op">=</span><span class="dv">50</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
@@ -2161,7 +2167,7 @@ tensor(4.9299, device='mps:0') tensor(0.0098, device='mps:0')</code></pre>
 <pre><code>&lt;function __main__.plot_image_completion(prop=0.1, factors=50)&gt;</code></pre>
 </div>
 </div>
-<div id="cell-59" class="cell" data-execution_count="45">
+<div id="cell-60" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now use matrix faactaorization to predict the ratings</span></span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
