@@ -340,7 +340,7 @@
     "href": "index.html",
     "title": "ML Resources",
     "section": "",
-    "text": "📊\n\n\n\nProfessional LaTeX-based lecture slides with mathematical rigor and clear explanations of ML concepts.\nView Slides\n\n\n\n\n📚\n\n\n\nStep-by-step practice problems with detailed solutions to reinforce learning and build practical skills.\nBrowse Tutorials\n\n\n\n\n💻\n\n\n\nInteractive coding exercises and demonstrations with real datasets and implementations.\nExplore Notebooks"
+    "text": "📊\n\n\n\nProfessional LaTeX-based lecture slides with mathematical rigor and clear explanations of ML concepts.\nView Slides\n\n\n\n\n📚\n\n\n\nStep-by-step practice problems with detailed solutions to reinforce learning and build practical skills.\nBrowse Tutorials\n\n\n\n\n💻\n\n\n\nInteractive coding exercises and demonstrations with real datasets and implementations.\nExplore Notebooks\n\n\n\n\n📝\n\n\n\nReal-world machine learning assignments from ES335 and ES654 courses with GitHub Classroom integration.\nView Assignments"
   },
   {
     "objectID": "index.html#course-overview",
@@ -369,6 +369,41 @@
     "title": "ML Resources",
     "section": "Contributing & Feedback",
     "text": "Contributing & Feedback\nFound an issue or have a suggestion? We welcome contributions from the community!\n\nReport Issues: Use our issue templates at github.com/nipunbatra/ml-teaching/issues/new/choose to report bugs, suggest content improvements, or request new features\nView Source: Browse the repository to explore all materials\nContribute: Submit pull requests with improvements or corrections\n\n\nFor questions or feedback, visit Prof. Nipun Batra’s homepage or create an issue"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "📊 Assignment 1 - Fall 2024\n\n\nLatest machine learning assignment covering fundamental concepts and implementations.\n\n\nView Assignment GitHub Repository\n\n\n\n\n📈 Assignment 2 - Fall 2024\n\n\nAdvanced machine learning concepts with practical implementation challenges.\n\n\nView Assignment GitHub Repository\n\n\n\n\n\nThese are template repositories used for GitHub Classroom:\n\n\n🎯 Assignment 1 Template\n\n\nFoundational machine learning concepts and basic algorithm implementations.\n\n\nView Template Use Template\n\n\n\n\n🔍 Assignment 2 Template\n\n\nIntermediate machine learning techniques and model evaluation methods.\n\n\nView Template Use Template\n\n\n\n\n🚀 Assignment 3\n\n\nAdvanced machine learning applications and real-world problem solving.\n\n\nView Assignment GitHub Repository"
+  },
+  {
+    "objectID": "assignments.html#es335---machine-learning",
+    "href": "assignments.html#es335---machine-learning",
+    "title": "Assignments",
+    "section": "",
+    "text": "📊 Assignment 1 - Fall 2024\n\n\nLatest machine learning assignment covering fundamental concepts and implementations.\n\n\nView Assignment GitHub Repository\n\n\n\n\n📈 Assignment 2 - Fall 2024\n\n\nAdvanced machine learning concepts with practical implementation challenges.\n\n\nView Assignment GitHub Repository\n\n\n\n\n\nThese are template repositories used for GitHub Classroom:\n\n\n🎯 Assignment 1 Template\n\n\nFoundational machine learning concepts and basic algorithm implementations.\n\n\nView Template Use Template\n\n\n\n\n🔍 Assignment 2 Template\n\n\nIntermediate machine learning techniques and model evaluation methods.\n\n\nView Template Use Template\n\n\n\n\n🚀 Assignment 3\n\n\nAdvanced machine learning applications and real-world problem solving.\n\n\nView Assignment GitHub Repository"
+  },
+  {
+    "objectID": "assignments.html#es654---machine-learning-for-iot",
+    "href": "assignments.html#es654---machine-learning-for-iot",
+    "title": "Assignments",
+    "section": "ES654 - Machine Learning for IoT",
+    "text": "ES654 - Machine Learning for IoT\nHistorical assignments focusing on machine learning applications in IoT and sensor data:\n\n\n💻 ES654 2023 Template\n\n\nLatest template for machine learning applications in IoT systems.\n\n\nView Template GitHub Repository\n\n\n\n\n📱 ES654 2022 Code\n\n\nMachine learning implementations for IoT and sensor data analysis (2022).\n\n\nView Template Use Template\n\n\n\n\n🔧 ES654 2021 Code\n\n\nMachine learning techniques for IoT applications and embedded systems (2021).\n\n\nView Template Use Template\n\n\n\n\n📊 ES654 2020 Code\n\n\nFoundational machine learning concepts applied to IoT and sensor networks (2020).\n\n\nView Template Use Template"
+  },
+  {
+    "objectID": "assignments.html#for-instructors",
+    "href": "assignments.html#for-instructors",
+    "title": "Assignments",
+    "section": "For Instructors",
+    "text": "For Instructors\n\nUsing These Assignments\n\nTemplate Repositories: Click “Use Template” to create new assignments for your courses\nGitHub Classroom: These repositories are designed to work seamlessly with GitHub Classroom\nCustomization: All assignments can be modified to fit your specific course requirements\nAuto-grading: Many assignments include GitHub Actions for automated testing\n\n\n\nAssignment Features\n\nReal-world Datasets: Assignments use practical datasets from various domains\nProgressive Difficulty: Structured to build skills incrementally\nImplementation Focus: Emphasis on coding ML algorithms from scratch\nEvaluation Metrics: Comprehensive assessment criteria and rubrics\nDocumentation: Detailed instructions and starter code provided\n\n\n\n\n\n\n\nPro Tip for Students\n\n\n\nStart early with these assignments! They require both theoretical understanding and practical implementation skills. Use the course materials (slides, tutorials, notebooks) as references while working through the problems."
+  },
+  {
+    "objectID": "assignments.html#contributing-feedback",
+    "href": "assignments.html#contributing-feedback",
+    "title": "Assignments",
+    "section": "Contributing & Feedback",
+    "text": "Contributing & Feedback\nFound an issue with an assignment or have suggestions for improvement?\n\nReport Issues: Create a GitHub issue for assignment-related feedback\nContribute: Submit pull requests with improvements or additional assignments\nDiscussion: Join the conversation about assignment design and pedagogy\n\n\nAll assignments are developed for educational use and are continuously updated based on student feedback and learning outcomes."
   },
   {
     "objectID": "notebooks.html",
