@@ -340,7 +340,7 @@
     "href": "index.html",
     "title": "ML Resources",
     "section": "",
-    "text": "📊\n\n\n\nProfessional LaTeX-based lecture slides with mathematical rigor and clear explanations of ML concepts.\nView Slides\n\n\n\n\n📚\n\n\n\nStep-by-step practice problems with detailed solutions to reinforce learning and build practical skills.\nBrowse Tutorials\n\n\n\n\n💻\n\n\n\nInteractive coding exercises and demonstrations with real datasets and implementations.\nExplore Notebooks\n\n\n\n\n📝\n\n\n\nReal-world machine learning assignments from ES335 and ES654 courses with GitHub Classroom integration.\nView Assignments"
+    "text": "🎓\n\n\n\nComplete ML courses from IIT Gandhinagar with video lectures, assignments, and proven pedagogical approaches.\nExplore Courses\n\n\n\n\n📊\n\n\n\nProfessional LaTeX-based lecture slides with mathematical rigor and clear explanations of ML concepts.\nView Slides\n\n\n\n\n📚\n\n\n\nStep-by-step practice problems with detailed solutions to reinforce learning and build practical skills.\nBrowse Tutorials\n\n\n\n\n💻\n\n\n\nInteractive coding exercises and demonstrations with real datasets and implementations.\nExplore Notebooks\n\n\n\n\n📝\n\n\n\nReal-world machine learning assignments from ES335 and ES654 courses with GitHub Classroom integration.\nView Assignments"
   },
   {
     "objectID": "index.html#course-overview",
@@ -404,6 +404,62 @@
     "title": "Assignments",
     "section": "Contributing & Feedback",
     "text": "Contributing & Feedback\nFound an issue with an assignment or have suggestions for improvement?\n\nReport Issues: Create a GitHub issue for assignment-related feedback\nContribute: Submit pull requests with improvements or additional assignments\nDiscussion: Join the conversation about assignment design and pedagogy\n\n\nAll assignments are developed for educational use and are continuously updated based on student feedback and learning outcomes."
+  },
+  {
+    "objectID": "courses.html",
+    "href": "courses.html",
+    "title": "Courses Using These Materials",
+    "section": "",
+    "text": "These comprehensive machine learning materials have been developed and refined through multiple course offerings at IIT Gandhinagar and are used by instructors worldwide. Below are the primary courses that utilize and contribute to this resource collection."
+  },
+  {
+    "objectID": "courses.html#overview",
+    "href": "courses.html#overview",
+    "title": "Courses Using These Materials",
+    "section": "",
+    "text": "These comprehensive machine learning materials have been developed and refined through multiple course offerings at IIT Gandhinagar and are used by instructors worldwide. Below are the primary courses that utilize and contribute to this resource collection."
+  },
+  {
+    "objectID": "courses.html#iit-gandhinagar-courses",
+    "href": "courses.html#iit-gandhinagar-courses",
+    "title": "Courses Using These Materials",
+    "section": "IIT Gandhinagar Courses",
+    "text": "IIT Gandhinagar Courses\n\nCurrent & Recent Offerings\n\n\n🎯 Fall 2025 - Machine Learning\n\n\nLatest iteration of the comprehensive ML course with cutting-edge content and methodologies.\n\n\nCourse Website GitHub Repository\n\n\n\n\n📺 Spring 2024 - Machine Learning (ES335)\n\n\nComprehensive ML course with YouTube video lectures covering all major topics from basics to advanced techniques.\n\n\nCourse Website 🎥 YouTube Lectures Assignments\n\n\n\n\n🎲 Fall 2023 - Probabilistic Machine Learning\n\n\nAdvanced course focusing on probabilistic approaches to machine learning with video lectures.\n\n\nCourse Website 🎥 YouTube Lectures\n\n\n\n\nHistorical Course Offerings\n\n\n📊 Spring 2023 - Machine Learning\n\n\nMachine learning fundamentals with practical implementations and real-world applications.\n\n\nCourse Website\n\n\n\n\n🤖 Spring 2022 - Machine Learning\n\n\nComprehensive coverage of supervised and unsupervised learning techniques.\n\n\nCourse Website\n\n\n\n\n🔍 Spring 2021 - Machine Learning\n\n\nML course adapted for online learning during the pandemic with enhanced digital resources.\n\n\nCourse Website\n\n\n\n\n📺 Spring 2020 - Machine Learning\n\n\nFoundation course with comprehensive video lectures covering core ML concepts and algorithms.\n\n\nCourse Website 🎥 YouTube Lectures\n\n\n\n\n🚀 Spring 2019 - Machine Learning\n\n\nEarly iteration of the course that established many of the pedagogical approaches used today.\n\n\nCourse Website"
+  },
+  {
+    "objectID": "courses.html#course-evolution-features",
+    "href": "courses.html#course-evolution-features",
+    "title": "Courses Using These Materials",
+    "section": "Course Evolution & Features",
+    "text": "Course Evolution & Features\n\n🎥 Video Resources\nSeveral course iterations include comprehensive YouTube video lectures:\n\nSpring 2024: Complete lecture series with assignments and interactive content\nFall 2023: Probabilistic ML focus with advanced mathematical treatments\n\nSpring 2020: Foundational lectures that established the video-based learning approach\n\n\n\n\n\n\n\nAccessing Video Content\n\n\n\nVideo lectures are integrated into the respective course websites. Visit the course links above and look for video icons or lecture sections to access the YouTube playlists.\n\n\n\n\n📚 Course Structure Evolution\nEach course iteration has contributed to the materials in this repository:\n\nSlides: LaTeX-based presentations refined across multiple offerings\nNotebooks: Interactive Jupyter notebooks with hands-on examples\nAssignments: Progressive problem sets using GitHub Classroom\nTutorials: Step-by-step guides for complex topics\n\n\n\n🌍 Global Usage\nThese materials are designed for:\n\nUniversity Courses: Adoptable by instructors worldwide\nSelf-Study: Complete learning path for independent learners\n\nCorporate Training: Professional development programs\nResearch Groups: Foundation for ML research education"
+  },
+  {
+    "objectID": "courses.html#for-instructors",
+    "href": "courses.html#for-instructors",
+    "title": "Courses Using These Materials",
+    "section": "For Instructors",
+    "text": "For Instructors\n\nUsing These Materials\n\n\n\n📖\n\n\nCourse Templates\nComplete semester-long courses with syllabi, schedules, and assessment strategies.\nBrowse Courses\n\n\n\n\n🎬\n\n\nVideo Integration\nLearn how to incorporate video lectures and online components into your ML course.\nVideo Resources\n\n\n\n\n📝\n\n\nAssessment Tools\nAssignments, projects, and evaluation rubrics tested across multiple course offerings.\nView Assignments\n\n\n\n\n\nCustomization Guidelines\n\nModular Design: Pick and choose topics based on your course duration\nDifficulty Scaling: Materials range from introductory to advanced graduate level\nPlatform Agnostic: Works with any LMS or course website platform\nRegular Updates: Materials continuously improved based on student feedback\n\n\n\n\n\n\n\nInstructor Support\n\n\n\nIf you’re using these materials in your course, we’d love to hear about it! Share your experience and join our community of ML educators."
+  },
+  {
+    "objectID": "courses.html#student-testimonials",
+    "href": "courses.html#student-testimonials",
+    "title": "Courses Using These Materials",
+    "section": "Student Testimonials",
+    "text": "Student Testimonials\n\n“The combination of theoretical slides, hands-on notebooks, and video lectures made complex ML concepts accessible and engaging.” - Spring 2024 Student\n\n\n“The progression from basic concepts to advanced topics was perfectly paced. The assignments really helped solidify the learning.” - Fall 2023 Student\n\n\n“Having access to multiple years of materials allowed me to find different explanations for challenging topics.” - Self-study Learner"
+  },
+  {
+    "objectID": "courses.html#about-the-instructor",
+    "href": "courses.html#about-the-instructor",
+    "title": "Courses Using These Materials",
+    "section": "About the Instructor",
+    "text": "About the Instructor\nProf. Nipun Batra is an Associate Professor in Computer Science at IIT Gandhinagar. His research group works on machine learning/AI/sensors/IoT for computational sustainability problems.\n\nFaculty Profile\nResearch Group\nAll Courses"
+  },
+  {
+    "objectID": "courses.html#contributing-to-course-development",
+    "href": "courses.html#contributing-to-course-development",
+    "title": "Courses Using These Materials",
+    "section": "Contributing to Course Development",
+    "text": "Contributing to Course Development\nFound ways to improve the course materials? We welcome contributions from the global ML education community:\n\nCourse Feedback: Share experiences using these materials in your courses\nContent Improvements: Suggest updates or additional topics\nNew Formats: Help adapt materials for different learning contexts\nTranslation: Assist with creating materials in other languages\n\nCreate an Issue View Repository\n\nThese courses represent years of pedagogical refinement and are continuously updated to reflect best practices in machine learning education."
   },
   {
     "objectID": "notebooks.html",
