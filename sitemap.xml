@@ -2,354 +2,354 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/zeroshot-fewshot.html</loc>
-    <lastmod>2025-07-26T16:00:48.560Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.346Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/vgg-minst.html</loc>
-    <lastmod>2025-07-26T16:00:48.560Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.346Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/tips.html</loc>
-    <lastmod>2025-07-26T16:00:48.550Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.336Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/taylor.html</loc>
-    <lastmod>2025-07-26T16:00:48.544Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.330Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/svm-soft-margin.html</loc>
-    <lastmod>2025-07-26T16:00:48.532Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.318Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/svm-kernel.html</loc>
-    <lastmod>2025-07-26T16:00:48.514Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.300Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/svm-cvxopt.html</loc>
-    <lastmod>2025-07-26T16:00:48.494Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.280Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/siren.html</loc>
-    <lastmod>2025-07-26T16:00:48.471Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.256Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/rule-based-vs-ml.html</loc>
-    <lastmod>2025-07-26T16:00:48.448Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.235Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/rl-3.html</loc>
-    <lastmod>2025-07-26T16:00:48.437Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.224Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/ridge.html</loc>
-    <lastmod>2025-07-26T16:00:48.435Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.222Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/polynomial-features.html</loc>
-    <lastmod>2025-07-26T16:00:48.426Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.213Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/pca.html</loc>
-    <lastmod>2025-07-26T16:00:48.422Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.209Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/numpy-pandas-basics.html</loc>
-    <lastmod>2025-07-26T16:00:48.365Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.151Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/names.html</loc>
-    <lastmod>2025-07-26T16:00:48.361Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.147Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/mnist-digits.html</loc>
-    <lastmod>2025-07-26T16:00:48.338Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.123Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/maths-for-ml-2.html</loc>
-    <lastmod>2025-07-26T16:00:48.319Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.104Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/logistic-regression-torch.html</loc>
-    <lastmod>2025-07-26T16:00:48.313Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.098Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/logistic-iris.html</loc>
-    <lastmod>2025-07-26T16:00:48.307Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.093Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/logistic-apple-oranges.html</loc>
-    <lastmod>2025-07-26T16:00:48.304Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.089Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/linear-regression-notebook.html</loc>
-    <lastmod>2025-07-26T16:00:48.302Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.088Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/lenet.html</loc>
-    <lastmod>2025-07-26T16:00:48.298Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.083Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/knn-variants.html</loc>
-    <lastmod>2025-07-26T16:00:48.278Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.064Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/hyperparameter-optimisation.html</loc>
-    <lastmod>2025-07-26T16:00:48.275Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.061Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/gradient-descent-2d.html</loc>
-    <lastmod>2025-07-26T16:00:48.234Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.020Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/text_to_image.html</loc>
-    <lastmod>2025-07-26T16:00:48.165Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.951Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/ensemble-representation.html</loc>
-    <lastmod>2025-07-26T16:00:48.103Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.888Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/dummy-variables-multi-colinearity.html</loc>
-    <lastmod>2025-07-26T16:00:48.084Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.870Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/dt-weighted.html</loc>
-    <lastmod>2025-07-26T16:00:48.076Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.861Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/decision-tree-real-input-real-output.html</loc>
-    <lastmod>2025-07-26T16:00:48.069Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.855Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/decision-tree-discrete-input-discrete-output.html</loc>
-    <lastmod>2025-07-26T16:00:48.063Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.849Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/cross-validation-diagrams.html</loc>
-    <lastmod>2025-07-26T16:00:48.052Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.837Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/convolution-operation.html</loc>
-    <lastmod>2025-07-26T16:00:48.051Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.837Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/contour.html</loc>
-    <lastmod>2025-07-26T16:00:48.023Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.809Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/cnn.html</loc>
-    <lastmod>2025-07-26T16:00:47.994Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.780Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/classes-trees.html</loc>
-    <lastmod>2025-07-26T16:00:47.978Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.764Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/binomial.html</loc>
-    <lastmod>2025-07-26T16:00:47.977Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.763Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/bias-variance-charts.html</loc>
-    <lastmod>2025-07-26T16:00:47.920Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.706Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/basis.html</loc>
-    <lastmod>2025-07-26T16:00:47.889Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.675Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/autodiff.html</loc>
-    <lastmod>2025-07-26T16:00:47.860Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.646Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/1d-cnn.html</loc>
-    <lastmod>2025-07-26T16:00:47.856Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.642Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/slides.html</loc>
-    <lastmod>2025-07-26T16:00:49.144Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.921Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/index.html</loc>
-    <lastmod>2025-07-26T16:00:47.654Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.444Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/assignments.html</loc>
-    <lastmod>2025-07-26T16:00:47.547Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.350Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/acknowledgments.html</loc>
-    <lastmod>2025-07-26T16:00:47.445Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.248Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/courses.html</loc>
-    <lastmod>2025-07-26T16:00:47.653Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.443Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks.html</loc>
-    <lastmod>2025-07-26T16:00:47.855Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.641Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/tutorials.html</loc>
-    <lastmod>2025-07-26T16:00:49.528Z</lastmod>
+    <lastmod>2025-07-29T09:21:29.302Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/anscombe.html</loc>
-    <lastmod>2025-07-26T16:00:47.858Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.644Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/autoregressive-model.html</loc>
-    <lastmod>2025-07-26T16:00:47.866Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.652Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/basis2.html</loc>
-    <lastmod>2025-07-26T16:00:47.916Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.702Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/bias-variance.html</loc>
-    <lastmod>2025-07-26T16:00:47.947Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.733Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/boosting-explanation.html</loc>
-    <lastmod>2025-07-26T16:00:47.978Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.764Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/cnn-edge.html</loc>
-    <lastmod>2025-07-26T16:00:47.981Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.767Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/confusion-mnist.html</loc>
-    <lastmod>2025-07-26T16:00:48.005Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.791Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/convolution-operation-stride.html</loc>
-    <lastmod>2025-07-26T16:00:48.050Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.835Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/cost-iteration-notebook.html</loc>
-    <lastmod>2025-07-26T16:00:48.052Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.837Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/curse-dimensionality.html</loc>
-    <lastmod>2025-07-26T16:00:48.057Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.843Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/decision-tree-real-input-discrete-output.html</loc>
-    <lastmod>2025-07-26T16:00:48.064Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.849Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/decision-tree-real-output.html</loc>
-    <lastmod>2025-07-26T16:00:48.074Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.859Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/dummy-baselines.html</loc>
-    <lastmod>2025-07-26T16:00:48.080Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.865Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/ensemble-feature-importance.html</loc>
-    <lastmod>2025-07-26T16:00:48.090Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.875Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/entropy.html</loc>
-    <lastmod>2025-07-26T16:00:48.108Z</lastmod>
+    <lastmod>2025-07-29T09:21:27.893Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/geometric-linear-regression.html</loc>
-    <lastmod>2025-07-26T16:00:48.229Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.015Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/gradient-descent.html</loc>
-    <lastmod>2025-07-26T16:00:48.250Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.036Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/hyperparams-experiments.html</loc>
-    <lastmod>2025-07-26T16:00:48.276Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.062Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/lasso-regression.html</loc>
-    <lastmod>2025-07-26T16:00:48.288Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.074Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/lin-reg-tutorial.html</loc>
-    <lastmod>2025-07-26T16:00:48.300Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.085Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/linear-regression.html</loc>
-    <lastmod>2025-07-26T16:00:48.303Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.088Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/logistic-circular.html</loc>
-    <lastmod>2025-07-26T16:00:48.306Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.091Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/logistic-regression-cost.html</loc>
-    <lastmod>2025-07-26T16:00:48.309Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.094Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/logits-usage.html</loc>
-    <lastmod>2025-07-26T16:00:48.316Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.102Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/meshgrid.html</loc>
-    <lastmod>2025-07-26T16:00:48.328Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.113Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/movie-recommendation-knn-mf.html</loc>
-    <lastmod>2025-07-26T16:00:48.347Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.133Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/nn-vectorization-with-vmap-jaxtyping-and-beartype-zeel.html</loc>
-    <lastmod>2025-07-26T16:00:48.365Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.151Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/object-detection-segmentation.html</loc>
-    <lastmod>2025-07-26T16:00:48.392Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.178Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/perceptron-learning.html</loc>
-    <lastmod>2025-07-26T16:00:48.425Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.211Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/pr-curve.html</loc>
-    <lastmod>2025-07-26T16:00:48.430Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.217Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/rl-1.html</loc>
-    <lastmod>2025-07-26T16:00:48.436Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.223Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/rl-2.html</loc>
-    <lastmod>2025-07-26T16:00:48.442Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.229Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/sfs-and-bfs.html</loc>
-    <lastmod>2025-07-26T16:00:48.450Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.237Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/sklearn-on-gpu.html</loc>
-    <lastmod>2025-07-26T16:00:48.493Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.279Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/svm-kernel-understanding.html</loc>
-    <lastmod>2025-07-26T16:00:48.502Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.287Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/svm-primal-dual.html</loc>
-    <lastmod>2025-07-26T16:00:48.523Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.308Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/svm.html</loc>
-    <lastmod>2025-07-26T16:00:48.539Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.325Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/tensor-factorisation.html</loc>
-    <lastmod>2025-07-26T16:00:48.549Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.335Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/transcript.html</loc>
-    <lastmod>2025-07-26T16:00:48.555Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.341Z</lastmod>
   </url>
   <url>
     <loc>https://nipunbatra.github.io/ml-teaching/notebooks/visualisation.html</loc>
-    <lastmod>2025-07-26T16:00:48.560Z</lastmod>
+    <lastmod>2025-07-29T09:21:28.346Z</lastmod>
   </url>
 </urlset>
